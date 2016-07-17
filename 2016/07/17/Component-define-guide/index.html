@@ -3,25 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>关于我们 | 洽客前端</title>
+    <title>组件编写规范 | 洽客前端</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="洽客（Qiakr）隶属于杭州蚁国科技有限公司
-是一家基于移动互联网,为传统零售企业提供创新型服务的公司
-我们为线下实体零售商提供创新的零售方式">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我们">
-<meta property="og:url" content="http://www.qiakr.com/about/index.html">
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件编写规范">
+<meta property="og:url" content="http://www.qiakr.com/2016/07/17/Component-define-guide/index.html">
 <meta property="og:site_name" content="洽客前端">
-<meta property="og:description" content="洽客（Qiakr）隶属于杭州蚁国科技有限公司
-是一家基于移动互联网,为传统零售企业提供创新型服务的公司
-我们为线下实体零售商提供创新的零售方式">
-<meta property="og:updated_time" content="2016-05-07T08:58:44.000Z">
+<meta property="og:description" content="组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。">
+<meta property="og:updated_time" content="2016-07-17T08:20:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我们">
-<meta name="twitter:description" content="洽客（Qiakr）隶属于杭州蚁国科技有限公司
-是一家基于移动互联网,为传统零售企业提供创新型服务的公司
-我们为线下实体零售商提供创新的零售方式">
+<meta name="twitter:title" content="组件编写规范">
+<meta name="twitter:description" content="组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。">
     
 
     
@@ -143,33 +139,68 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/qkfe/about/index.html">关于我们</em>
+    <a class="page-title-link" href="/qkfe/categories/web开发/">web开发</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="page-undefined" class="article article-single article-type-page" itemscope itemprop="blogPost">
+                            <article id="post-Component-define-guide" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        关于我们
+        组件编写规范
         </h1>
     
 
             </header>
         
         <div class="article-subtitle">
-            <a href="/qkfe/about/index.html" class="article-date">
-    <time datetime="2016-05-07T08:03:53.000Z" itemprop="datePublished">2016-05-07</time>
+            <a href="/qkfe/2016/07/17/Component-define-guide/" class="article-date">
+    <time datetime="2016-07-17T08:03:53.000Z" itemprop="datePublished">2016-07-17</time>
 </a>
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>洽客（Qiakr）隶属于杭州蚁国科技有限公司</p>
-<p>是一家基于移动互联网,为传统零售企业提供创新型服务的公司</p>
-<p>我们为线下实体零售商提供创新的零售方式</p>
+            <p>组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。<br><a id="more"></a></p>
+<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ul>
+<li>开闭原则：对内修改关闭，对外扩展开放</li>
+<li>单例模式：同一个组件，在多次调用时，只使用一个单例</li>
+</ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>使用闭包：减少全局变量的污染，避免与其它插件冲突</p>
+<h3 id="严格模式-strict-mode"><a href="#严格模式-strict-mode" class="headerlink" title="严格模式 (strict mode)"></a>严格模式 (strict mode)</h3><p>使用严格模式：添加 <code>use strict</code> 标识</p>
+<ul>
+<li>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全；</li>
+<li>提高编译器效率，增加运行速度；</li>
+<li>为未来新版本的Javascript做好铺垫。</li>
+</ul>
+<h3 id="组件说明"><a href="#组件说明" class="headerlink" title="组件说明"></a>组件说明</h3><p>组件应添加组件说明，包含：组件名称、作者、版本、依赖项、使用方式、源码地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* module: Button</span><br><span class="line">* author: XXX</span><br><span class="line">* version: v0.0.1</span><br><span class="line">* use age: ....</span><br><span class="line">* deps: [...]</span><br><span class="line">* github: ...</span><br><span class="line">**/</span><br></pre></td></tr></table></figure>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>组件的状态和属性都应该在构造函数中进行初始化</p>
+<h3 id="插件定义"><a href="#插件定义" class="headerlink" title="插件定义"></a>插件定义</h3><p>通用插件定义</p>
+<ul>
+<li>在内部返回每一个jQuery对象，插件的实例缓存到jQ对象的<code>data</code>中</li>
+<li>要的参数的类型调用组件不同的方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Plugin(option) &#123;</span><br><span class="line">    return this.each(function () &#123;</span><br><span class="line">      var $this = $(this)</span><br><span class="line">      var data  = $this.data(&apos;qk.button&apos;)</span><br><span class="line"></span><br><span class="line">      if (!data) $this.data(&apos;qk.button&apos;, (data = new Button(this)))</span><br><span class="line">      if (typeof option == &apos;string&apos;) data[option].call($this)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="事件的命名空间"><a href="#事件的命名空间" class="headerlink" title="事件的命名空间"></a>事件的命名空间</h3><p>在开发较复杂的组件时，应添加事件命名空间，方便事件的管理，参见<a href="https://github.com/twbs/bootstrap/blob/master/js%2Fmodal.js" target="_blank" rel="external">bootstrap modal组件</a></p>
+<h3 id="对外开放配置"><a href="#对外开放配置" class="headerlink" title="对外开放配置"></a>对外开放配置</h3><p>组件通常有很多的配置，将配置接口对外开放，可方便用户对组件进行详情的配置与自定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.bn.button.defaults=&#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p><strong> 注意： 组件内部使用到的模板、class、id等都应该放到配置中，以便使用者自定义 </strong></p>
+<h3 id="对外开放构造器"><a href="#对外开放构造器" class="headerlink" title="对外开放构造器"></a>对外开放构造器</h3><p>将构造器对外开放，可方便外部对插件进行扩展升级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.fn.button.Constructor = Button;</span><br></pre></td></tr></table></figure>
+<h3 id="解决与其它重名插件的冲突"><a href="#解决与其它重名插件的冲突" class="headerlink" title="解决与其它重名插件的冲突"></a>解决与其它重名插件的冲突</h3><p>为防止组件名称与其它组件重名，应对外提供onConflict接口进行重命名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var old = $.fn.button;</span><br><span class="line">$.fn.button.noConflict = function () &#123;$.fn.button = old;return this;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>组件的生命周期包含：组件状态初始化、数据初始化、事件绑定、更新、销毁</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
+<li>PUBLIC CLASS DEFINITION：类定义，定义了插件构造方法类及方法。</li>
+<li>PLUGIN DEFINITION：插件定义，上面只是定义了插件的类，这里才是实现插件的地方。</li>
+<li>PLUGIN NOCONFLICT:插件命名冲突解决</li>
+<li>DATA-API：DATA-属性接口</li>
+</ul>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line">* module: Button</span><br><span class="line">* author: XXX</span><br><span class="line">* version: v0.0.1</span><br><span class="line">* use age: ....</span><br><span class="line">* deps: [...]</span><br><span class="line">* github: ...</span><br><span class="line">**/</span><br><span class="line"></span><br><span class="line">!function ($) &#123;</span><br><span class="line"></span><br><span class="line">  &quot;use strict&quot;;</span><br><span class="line"></span><br><span class="line">  // CLASS DEFINITION</span><br><span class="line">  // ================ </span><br><span class="line">  var Button = function (element, options) &#123;/*some code*&#125;</span><br><span class="line">  </span><br><span class="line">  Button.VERSION=&apos;v1.0.1&apos;;</span><br><span class="line">  </span><br><span class="line">  Button.prototype.setState = function (state) &#123;/*some code*/&#125;</span><br><span class="line">  Button.prototype.toggle = function () &#123;/*some code*/&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  // PLUGIN DEFINITION</span><br><span class="line">  // =================</span><br><span class="line">  function Plugin(option) &#123;</span><br><span class="line">    return this.each(function () &#123;</span><br><span class="line">      var $this = $(this)</span><br><span class="line">      var data  = $this.data(&apos;qk.button&apos;)</span><br><span class="line"></span><br><span class="line">      if (!data) $this.data(&apos;qk.button&apos;, (data = new Button(this)))</span><br><span class="line">      if (typeof option == &apos;string&apos;) data[option].call($this)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  var old = $.fn.button;</span><br><span class="line"></span><br><span class="line">  $.fn.button             = Plugin;</span><br><span class="line">  $.fn.button.Constructor = Button;</span><br><span class="line">  $.fn.button.defaults = &#123;loadingText: &apos;loading...&apos;&#125;</span><br><span class="line">  </span><br><span class="line">  // NO CONFLICT</span><br><span class="line">  // ===========</span><br><span class="line">  $.fn.button.noConflict = function () &#123;</span><br><span class="line">      $.fn.button = old;</span><br><span class="line">      return this;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // DATA-API</span><br><span class="line">  // ========</span><br><span class="line">  $(document).on(&apos;click.button.data-api&apos;, &apos;[data-toggle^=button]&apos;, function (e) &#123;/*some code*/&#125;)</span><br><span class="line"></span><br><span class="line">&#125;(jQuery, window, undefined);</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -177,7 +208,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://www.qiakr.com/about/index.html" data-id="ciqqc1amm000f57c970ahx3a9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.qiakr.com/qkfe/2016/07/17/Component-define-guide/" data-id="ciqqc1alp000157c9536xnqcu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -244,7 +275,7 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="关于我们" data-url="http://www.qiakr.com/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/07/17/Component-define-guide/" data-title="组件编写规范" data-url="http://www.qiakr.com/qkfe/2016/07/17/Component-define-guide/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -320,6 +351,19 @@ var _hmt = _hmt || [];
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/qkfe/2016/07/07/AMD-Module-guide/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">CSS 编码指南</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
