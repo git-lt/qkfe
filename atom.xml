@@ -5,7 +5,7 @@
   <link href="/qkfe/atom.xml" rel="self"/>
   
   <link href="http://www.qiakr.com/"/>
-  <updated>2016-07-17T08:20:22.000Z</updated>
+  <updated>2016-07-17T08:22:32.000Z</updated>
   <id>http://www.qiakr.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://www.qiakr.com/2016/07/17/Component-define-guide/"/>
     <id>http://www.qiakr.com/2016/07/17/Component-define-guide/</id>
     <published>2016-07-17T08:03:53.000Z</published>
-    <updated>2016-07-17T08:20:22.000Z</updated>
+    <updated>2016-07-17T08:22:32.000Z</updated>
     
-    <content type="html">&lt;p&gt;组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/HammockCypress_ZH-CN10587366950_1920x1080.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot; title=&quot;原则&quot;&gt;&lt;/a&gt;原则&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;开闭原则：对内修改关闭，对外扩展开放&lt;/li&gt;
 &lt;li&gt;单例模式：同一个组件，在多次调用时，只使用一个单例&lt;/li&gt;
@@ -64,7 +65,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。&lt;br&gt;
+      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/HammockCypress_ZH-CN10587366950_1920x1080.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。&lt;br&gt;
     
     </summary>
     
@@ -78,9 +80,10 @@
     <link href="http://www.qiakr.com/2016/07/07/AMD-Module-guide/"/>
     <id>http://www.qiakr.com/2016/07/07/AMD-Module-guide/</id>
     <published>2016-07-07T08:03:53.000Z</published>
-    <updated>2016-07-17T08:17:46.000Z</updated>
+    <updated>2016-07-17T08:23:50.000Z</updated>
     
-    <content type="html">&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;是编写模块还是编写组件？&quot;&gt;&lt;a href=&quot;#是编写模块还是编写组件？&quot; class=&quot;headerlink&quot; title=&quot;是编写模块还是编写组件？&quot;&gt;&lt;/a&gt;是编写模块还是编写组件？&lt;/h2&gt;&lt;h3 id=&quot;模块与组件的区别&quot;&gt;&lt;a href=&quot;#模块与组件的区别&quot; class=&quot;headerlink&quot; title=&quot;模块与组件的区别&quot;&gt;&lt;/a&gt;模块与组件的区别&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;组件：可重用，对独立功能生命周期的封装。对外提供统一的配置和调用接口。遵循开闭原则：对外扩展开放，对内修改关闭。&lt;/li&gt;
 &lt;li&gt;模块：不可重用，对一个业务处理的封装，有独有的业务处理代码，可调用各种组件。&lt;/li&gt;
@@ -121,7 +124,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;
+      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;
     
     </summary>
     
