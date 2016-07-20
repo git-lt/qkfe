@@ -3,25 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>关于我们 | 洽客前端</title>
+    <title>HTML标签之Table | 洽客前端</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="洽客（Qiakr）隶属于杭州蚁国科技有限公司
-是一家基于移动互联网,为传统零售企业提供创新型服务的公司
-我们为线下实体零售商提供创新的零售方式">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我们">
-<meta property="og:url" content="http://www.qiakr.com/about/index.html">
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="Table标签使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML标签之Table">
+<meta property="og:url" content="http://www.qiakr.com/2016/07/17/html-table/index.html">
 <meta property="og:site_name" content="洽客前端">
-<meta property="og:description" content="洽客（Qiakr）隶属于杭州蚁国科技有限公司
-是一家基于移动互联网,为传统零售企业提供创新型服务的公司
-我们为线下实体零售商提供创新的零售方式">
-<meta property="og:updated_time" content="2016-05-07T08:58:44.000Z">
+<meta property="og:description" content="Table标签使用">
+<meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/blog-8070819_8070819_1308583954215.jpg?imageView2/1/w/720/h/400">
+<meta property="og:updated_time" content="2016-07-20T04:23:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我们">
-<meta name="twitter:description" content="洽客（Qiakr）隶属于杭州蚁国科技有限公司
-是一家基于移动互联网,为传统零售企业提供创新型服务的公司
-我们为线下实体零售商提供创新的零售方式">
+<meta name="twitter:title" content="HTML标签之Table">
+<meta name="twitter:description" content="Table标签使用">
+<meta name="twitter:image" content="http://7xi480.com1.z0.glb.clouddn.com/blog-8070819_8070819_1308583954215.jpg?imageView2/1/w/720/h/400">
     
 
     
@@ -143,33 +141,60 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/qkfe/about/index.html">关于我们</em>
+    <a class="page-title-link" href="/qkfe/categories/web开发/">web开发</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="page-undefined" class="article article-single article-type-page" itemscope itemprop="blogPost">
+                            <article id="post-html-table" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        关于我们
+        HTML标签之Table
         </h1>
     
 
             </header>
         
         <div class="article-subtitle">
-            <a href="/qkfe/about/index.html" class="article-date">
-    <time datetime="2016-05-07T08:03:53.000Z" itemprop="datePublished">2016-05-07</time>
+            <a href="/qkfe/2016/07/17/html-table/" class="article-date">
+    <time datetime="2016-07-17T04:00:27.000Z" itemprop="datePublished">2016-07-17</time>
 </a>
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>洽客（Qiakr）隶属于杭州蚁国科技有限公司</p>
-<p>是一家基于移动互联网,为传统零售企业提供创新型服务的公司</p>
-<p>我们为线下实体零售商提供创新的零售方式</p>
+            <p>Table标签使用<br><a id="more"></a></p>
+<p><img src="http://7xi480.com1.z0.glb.clouddn.com/blog-8070819_8070819_1308583954215.jpg?imageView2/1/w/720/h/400" alt=""></p>
+<h3 id="1、-lt-thead-gt"><a href="#1、-lt-thead-gt" class="headerlink" title="1、&lt;thead&gt;"></a>1、<code>&lt;thead&gt;</code></h3><p>整个第一行的部分没有包含数据，它只是每个列的标题。因此，我们可以<code>&lt;thead</code>&gt;元素来完成这件事情，它会包裹第一个<code>&lt;tr&gt;</code>元素(它会包裹所有的行所需要的头部信息)；<br>当你使用了<code>&lt;thead&gt;</code>元素后，<code>&lt;table&gt;</code>元素中不能有直接的<code>&lt;tr&gt;</code>子元素，所有的行必须存在于<code>&lt;thead&gt;</code>，<code>&lt;tbody&gt;</code>和<code>&lt;tfoot&gt;</code>里面。要注意的是我们会把所有的数据行包含在<code>&lt;tbody&gt;</code>里面。</p>
+<h3 id="2、-lt-tfoot-gt"><a href="#2、-lt-tfoot-gt" class="headerlink" title="2、&lt;tfoot&gt;"></a>2、<code>&lt;tfoot&gt;</code></h3><p><code>&lt;tfoot&gt;</code>独一无二的一点是它在HTML中的位置，它紧跟着<code>&lt;thead&gt;</code>并位于<code>&lt;tbody&gt;</code>的前面！你可能会认为它是table标签结束前的最后一个元素，但情况并不是这样。因为页脚可能包含了用于理解表格的必要信息，因为在资源序列中它应当排在在数据的前面。 在一些元素位置根据需要从上至下跳动的布局中，<code>&lt;tfoot&gt;</code>是个不错的技巧。举个例子，虽然一个导航在屏幕的底部，但在HTML源码中导航应该在顶部。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;   </span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;Name&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;   </span><br><span class="line">    &lt;/thead&gt;   </span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;tfoot&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;Favorite Color&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;  </span><br><span class="line">    &lt;/tfoot&gt;   </span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;Jim&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;00001&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;Blue&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;   </span><br><span class="line">    &lt;/tbody&gt; </span><br><span class="line">&lt;/table&gt;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">  &lt;thead&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      &lt;th&gt;Name&lt;/th&gt;</span><br><span class="line">      &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">      &lt;th&gt;Favorite Color&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">  &lt;/thead&gt;</span><br><span class="line">  &lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      &lt;th&gt;tfoot&lt;/th&gt;</span><br><span class="line">      &lt;th&gt;ID&lt;/th&gt;</span><br><span class="line">      &lt;th&gt;Favorite Color&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">  &lt;/tfoot&gt;</span><br><span class="line">  &lt;tbody&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      &lt;td&gt;Jim&lt;/td&gt;</span><br><span class="line">      &lt;td&gt;00001&lt;/td&gt;</span><br><span class="line">      &lt;td&gt;Blue&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">  &lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3、单元格：td和th"><a href="#3、单元格：td和th" class="headerlink" title="3、单元格：td和th"></a>3、单元格：<code>td</code>和<code>th</code></h3><p>在表格中一个独立的单元格总是<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>两者之一，只要你愿意，你可以把任何东西放进表格的单元格中，但要使这些元素成为表格中的单元格元素。<code>&lt;th&gt;</code>是“表格的标题”一般用在一列的第一格,里面的内容会自动加粗加黑他们，<code>&lt;td&gt;</code>是“表格的数据”。</p>
+<h3 id="4、基本样式"><a href="#4、基本样式" class="headerlink" title="4、基本样式"></a>4、基本样式</h3><p>你看到的大多数表格都用颜色和线条来区别表格的不同部分。边框是非常常见的。默认的，所有的单元格相互之间都有2px的空隙<br>bordercolor =”边框颜色”<br>cellspacing =”单元格之间的距离，外边距”<br>cellpadding =”单元格与内容之间的距离，内边距”<br>bgcolor =”背景颜色”<br>align =”水平对齐方式”<br>valign =”垂直对齐方式”</p>
+<h4 id="border-collapse"><a href="#border-collapse" class="headerlink" title="border-collapse"></a>border-collapse</h4><ul>
+<li>用于表格属性, 表示表格的两边框合并为一条。 </li>
+<li>默认值：<strong>separate</strong>边框会被分开。不会忽略border-spacing 和 empty-cells 属性。</li>
+<li><strong>collapse</strong>：如果可能，边框会合并为一个单一的边框。会忽略border-spacing 和 empty-cells 属性。</li>
+<li><strong>inherit</strong>：规定应该从父元素继承border-collapse属性的值。</li>
+</ul>
+<h4 id="border-spacing"><a href="#border-spacing" class="headerlink" title="border-spacing"></a>border-spacing</h4><ul>
+<li>属性设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。</li>
+<li><strong>length length</strong>: 规定相邻单元的边框之间的距离。使用 px、cm 等单位。不允许使用负值。 如果定义一个 length 参数，那么定义的是水平和垂直间距。 如果定义两个 length参数，那么第一个设置水平间距，而第二个设置垂直间距。</li>
+<li><strong>inherit</strong>:规定应该从父元素继承 border-spacing 属性的值。</li>
+</ul>
+<p>table表格td设置宽度后文字太多导致自动换行：<br>1.设置表格table的样式为：style=”table-layout:fixed;”<br>2.然后设置td的样式为：style=”word-wrap:break-word;”</p>
+<h3 id="5、合并单元格"><a href="#5、合并单元格" class="headerlink" title="5、合并单元格"></a>5、合并单元格</h3><p>有两个能应用在任何单元格中的重要的属性（<code>&lt;td&gt;</code>或<code>&lt;th&gt;</code>）：colspan 和 rowspan 。他们接受任何大于等于2的正整数。如果一个 td 元素的 colspan 值为2（<code>&lt;td colspan=&quot;2&quot;&gt;</code>），它将仍然是单独的单元格，但它<br>会在一行中水平的占据两个单元格的空间。rowspan也一样，但它作用于垂直方向。</p>
+<h3 id="6、使语义元素表现地像一个表格"><a href="#6、使语义元素表现地像一个表格" class="headerlink" title="6、使语义元素表现地像一个表格"></a>6、使语义元素表现地像一个表格</h3><p>display: table                /<em> <code>&lt;table&gt;</code>     </em>/<br>display: table-cell           /<em> <code>&lt;td&gt;</code>        </em>/<br>display: table-row            /<em> <code>&lt;tr&gt;</code>        </em>/<br>display: table-column         /<em> <code>&lt;col&gt;</code>       </em>/<br>display: table-column-group   /<em> <code>&lt;colgroup&gt;</code>  </em>/<br>display: table-footer-group   /<em> <code>&lt;tfoot&gt;</code>     </em>/<br>display: table-header-group   /<em> <code>&lt;thead&gt;</code>     </em>/</p>
+<p>注意这里没有<th>的值，这是因为语义的关系，</th><th>和</th><td>的表现实际上是相同的，所以没必要多增加这样一个值。</td></p>
+<p>display: inline-table<br>表格是自适应宽度的。它就像 inline-block 元素一样。顾名思义，这个值使得它们成为一个 inline-block 元素而不会产生换行。</p>
+<h3 id="7、colgroup与col"><a href="#7、colgroup与col" class="headerlink" title="7、colgroup与col"></a>7、colgroup与col</h3><p>colgroup、col 标签用来定义表格列的分组。<br>通过使用 <code>&lt;colgroup&gt;</code>标签，可以向整个列应用样式，而不需要重复为每个单元格或每一行设置样式。<br>如果想对 <code>&lt;colgroup&gt;</code> 中的某列定义不同的属性，请在 <code>&lt;colgroup&gt;</code> 标签内使用 <code>&lt;col&gt;</code> 标签。<br>col标签为表格中一个或多个列定义属性值。<br>colgroup标签用于对表格中的列进行组合，以便对其进行格式化。 </p>
+<h3 id="8、“隐含”元素和未关闭的标签"><a href="#8、“隐含”元素和未关闭的标签" class="headerlink" title="8、“隐含”元素和未关闭的标签"></a>8、“隐含”元素和未关闭的标签</h3><ul>
+<li><code>&lt;col&gt;</code>标签是属于那种无内容的不需要闭合的标签，类似<code>&lt;br&gt;/&lt;br /&gt;</code>；</li>
+<li><code>&lt;td&gt;</code>元素在这些情况中是无需闭合的：“如果<td>元素后面没有更多的<code>&lt;td&gt;或&lt;th&gt;</code>元素或者在它父元素中没有更多的内容，闭合标签是可以省略的。”；</td></li>
+<li>缺少的<code>&lt;/tr&gt;</code>标签的原理也是相同的：“如果<tr>元素后面没有紧跟着一个</tr><tr>元素或者如果它父元素组(<thead>,<br><tbody>或者 <tfoot>)没有更多的内容，结束标签是可以省略的。”；</tfoot></tbody></thead></tr></li>
+</ul>
+<h3 id="9、高亮鼠标所在的行-列-单元格"><a href="#9、高亮鼠标所在的行-列-单元格" class="headerlink" title="9、高亮鼠标所在的行/列/单元格"></a>9、高亮鼠标所在的行/列/单元格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">td:hover &#123; </span><br><span class="line">  background: yellow;</span><br><span class="line">&#125;</span><br><span class="line">tr:hover &#123;</span><br><span class="line">  background: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">鼠标移动动一个单元格的时候他所在的列与行全部选中</span><br><span class="line">var allCells = $(&quot;td, th&quot;);</span><br><span class="line">allCells.on(&quot;mouseover&quot;, function() &#123;</span><br><span class="line">    var el = $(this),</span><br><span class="line">        pos = el.index();</span><br><span class="line">    el.parent().find(&quot;th, td&quot;).addClass(&quot;hover&quot;);</span><br><span class="line">    allCells.filter(&quot;:nth-child(&quot; + (pos+1) + &quot;)&quot;).addClass(&quot;hover&quot;);</span><br><span class="line">  &#125;)</span><br><span class="line">  .on(&quot;mouseout&quot;, function() &#123;</span><br><span class="line">    allCells.removeClass(&quot;hover&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"> 表格自身设置圆角时需要设置border-collapse: separate;</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -177,7 +202,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://www.qiakr.com/about/index.html" data-id="ciqudy6pg000j9wc9jwlmdb4p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.qiakr.com/qkfe/2016/07/17/html-table/" data-id="ciqudy6o800089wc9vxz3bim3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -244,7 +269,7 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="about/index.html" data-title="关于我们" data-url="http://www.qiakr.com/about/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/07/17/html-table/" data-title="HTML标签之Table" data-url="http://www.qiakr.com/qkfe/2016/07/17/html-table/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -320,6 +345,29 @@ var _hmt = _hmt || [];
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/qkfe/2016/07/17/array-methods/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            数组方法介绍
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/qkfe/2016/06/29/ES5-new-features/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">ES5特性介绍</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
