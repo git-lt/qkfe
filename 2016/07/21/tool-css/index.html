@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>CSS工具类使用说明 | 洽客前端</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="旨在现在的CSS框架下去快速修正个别样式，减少添加CSS的工作量，但不可滥用工具类，如列表项的样式较多里，并不实用，常用于容器类型的标签，建议样式在三个左右时，使用工具类组合，四个以上时，添加独立的class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS工具类使用说明">
+<meta property="og:url" content="http://www.qiakr.com/2016/07/21/tool-css/index.html">
+<meta property="og:site_name" content="洽客前端">
+<meta property="og:description" content="旨在现在的CSS框架下去快速修正个别样式，减少添加CSS的工作量，但不可滥用工具类，如列表项的样式较多里，并不实用，常用于容器类型的标签，建议样式在三个左右时，使用工具类组合，四个以上时，添加独立的class">
+<meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400">
+<meta property="og:updated_time" content="2016-07-21T12:11:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS工具类使用说明">
+<meta name="twitter:description" content="旨在现在的CSS框架下去快速修正个别样式，减少添加CSS的工作量，但不可滥用工具类，如列表项的样式较多里，并不实用，常用于容器类型的标签，建议样式在三个左右时，使用工具类组合，四个以上时，添加独立的class">
+<meta name="twitter:image" content="http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/qkfe/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/qkfe/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/qkfe/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/qkfe/css/style.css">
+
+    <script src="/qkfe/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/qkfe/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/qkfe/vendor/scrollLoading/style.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2b4e0202baeda5f901b13a86cf9d65cf";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/qkfe/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">洽客技术团队 （QKED）</p>
+                            <p class="description">Talk is cheap, Show me the code.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/qkfe/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/qkfe/categories/web开发/">web开发</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/qkfe/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/qkfe/',
+        CONTENT_URL: '/qkfe/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/qkfe/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/qkfe/categories/web开发/">web开发</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-tool-css" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        CSS工具类使用说明
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/qkfe/2016/07/21/tool-css/" class="article-date">
+    <time datetime="2016-07-21T12:09:58.000Z" itemprop="datePublished">2016-07-21</time>
+</a>
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400" alt=""></p>
+<p>旨在现在的CSS框架下去快速修正个别样式，减少添加CSS的工作量，但不可滥用工具类，如列表项的样式较多里，并不实用，常用于容器类型的标签，建议样式在三个左右时，使用工具类组合，四个以上时，添加独立的class<br><a id="more"></a></p>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>百分比、字体大小、行高、字体风格、字体类型、外边距、内边距、块级显示、边框、颜色、背景颜色、浮动、定位、overflow、对齐、可见性、分隔线、文本溢出、动画</p>
+<h3 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h3><p>定义了常用的百分比 10 - 100，步进值10，加两个特殊百分比 25%、33.3%，分别对应四等分与三等分</p>
+<h3 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h3><p>定义了大小为0、10、12、13、14、16、18几种常用字体大小</p>
+<p>字体大小设置为0，通常可以用于去掉inline-block后产生的间隔，或可以用于隐藏文字、去掉img元素在容器中的间隔</p>
+<h3 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h3><p>定义了24、28、30常用行高</p>
+<h3 id="字体风格"><a href="#字体风格" class="headerlink" title="字体风格"></a>字体风格</h3><p>定义了 普通、加粗、斜体、中划线 常用样式</p>
+<h3 id="字体类型"><a href="#字体类型" class="headerlink" title="字体类型"></a>字体类型</h3><p>定义了 <code>Arial</code> 字体，用于数字</p>
+<h3 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h3><p>定义了 0-30 的 <code>margin</code>，5-30的 <code>margin-top/margin-right/margin-bottom</code>, 步进值为5</p>
+<h3 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h3><p>定义了 0-30 的 <code>padding</code>，5-30的 <code>padding-top/padding-right/padding-bottom</code>, 步进值为5</p>
+<h3 id="块级显示"><a href="#块级显示" class="headerlink" title="块级显示"></a>块级显示</h3><p>定义了几个显示方式 隐藏、行内、块级、行内块级</p>
+<h3 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h3><p>定义了1px的全边框，上、下、左、右边框的样式</p>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>定义了常用安全色<code>#333</code>、<code>#999</code>、<code>#666</code>、<code>#888</code>、常用颜色红、蓝、绿、橙、白的样式</p>
+<h3 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h3><p>定义了两中背景色 白色 与 灰色</p>
+<h3 id="浮动定位"><a href="#浮动定位" class="headerlink" title="浮动定位"></a>浮动定位</h3><p>定义了 左浮动 <code>l</code>, 右浮动 <code>r</code></p>
+<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><p>定义的 <code>overflow</code> 的 <code>hidden/auto</code> 两种的样式</p>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>定义了6中文本对齐方式，水平左中右，垂直上中下几中对齐</p>
+<h3 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h3><p>定义了 <code>visibility</code> 的 <code>hidden/visible</code> 两种样式</p>
+<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><p>定义了水平和垂直分隔线，便需要配合margin和背景颜色来使用</p>
+<h3 id="文本溢出"><a href="#文本溢出" class="headerlink" title="文本溢出"></a>文本溢出</h3><p>定义了文本超出以<code>...</code>显示的工具类，需要配合max-width来使用</p>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>定义了常用动画过渡处理的样式</p>
+<p>用法示例</p>
+<iframe height="300" scrolling="no" src="//codepen.io/togglelt/embed/WxrBzd/?height=300&theme-id=13299&default-tab=css,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="http://codepen.io/togglelt/pen/WxrBzd/" target="_blank" rel="external">Tool.css</a> by LT (<a href="http://codepen.io/togglelt" target="_blank" rel="external">@togglelt</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.<br></iframe>
+
+
+<p>源码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*!</span><br><span class="line">* author: LT</span><br><span class="line">* version: v0.0.1</span><br><span class="line">* github: https://github.com/git-lt/Tool.css/blob/master/Tool.css</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* percent width value */</span></span><br><span class="line">	<span class="selector-class">.pct10</span>&#123;<span class="attribute">width</span>:<span class="number">10%</span>;&#125; <span class="selector-class">.pct20</span>&#123;<span class="attribute">width</span>:<span class="number">20%</span>;&#125; <span class="selector-class">.pct25</span>&#123;<span class="attribute">width</span>:<span class="number">25%</span>;&#125; <span class="selector-class">.pct30</span>&#123;<span class="attribute">width</span>:<span class="number">30%</span>;&#125; <span class="selector-class">.pct33</span>&#123;<span class="attribute">width</span>:<span class="number">33.3%</span>;&#125; <span class="selector-class">.pct40</span>&#123;<span class="attribute">width</span>:<span class="number">40%</span>;&#125; <span class="selector-class">.pct50</span>&#123;<span class="attribute">width</span>:<span class="number">50%</span>;&#125; <span class="selector-class">.pct60</span>&#123;<span class="attribute">width</span>:<span class="number">60%</span>;&#125; <span class="selector-class">.pct70</span>&#123;<span class="attribute">width</span>:<span class="number">70%</span>;&#125; <span class="selector-class">.pct80</span>&#123;<span class="attribute">width</span>:<span class="number">80%</span>;&#125; <span class="selector-class">.pct90</span>&#123;<span class="attribute">width</span>:<span class="number">90%</span>;&#125; <span class="selector-class">.pct100</span>&#123;<span class="attribute">width</span>:<span class="number">100%</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* font-size */</span></span><br><span class="line">	<span class="selector-class">.f0</span>&#123;<span class="attribute">font-size</span>:<span class="number">0</span>;&#125; <span class="selector-class">.f10</span>&#123;<span class="attribute">font-size</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.f12</span>&#123;<span class="attribute">font-size</span>:<span class="number">12px</span>;&#125; <span class="selector-class">.f13</span>&#123;<span class="attribute">font-size</span>:<span class="number">13px</span>;&#125; <span class="selector-class">.f14</span>&#123;<span class="attribute">font-size</span>:<span class="number">14px</span>;&#125; <span class="selector-class">.f16</span>&#123;<span class="attribute">font-size</span>:<span class="number">16px</span>;&#125; <span class="selector-class">.f18</span>&#123;<span class="attribute">font-size</span>:<span class="number">18px</span>;&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*line-height*/</span></span><br><span class="line">	<span class="selector-class">.lh24</span> &#123; <span class="attribute">line-height</span>: <span class="number">24px</span>;&#125; <span class="selector-class">.lh28</span> &#123; <span class="attribute">line-height</span>: <span class="number">28px</span>;&#125; <span class="selector-class">.lh30</span> &#123; <span class="attribute">line-height</span>: <span class="number">30px</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* font-style */</span></span><br><span class="line">	<span class="selector-class">.n</span>&#123;<span class="attribute">font-weight</span>:<span class="number">400</span>; <span class="attribute">font-style</span>:normal; <span class="attribute">white-space</span>: normal;&#125; <span class="selector-class">.b</span>&#123;<span class="attribute">font-weight</span>:bold;&#125;<span class="selector-class">.i</span>&#123;<span class="attribute">font-style</span>:italic;&#125;<span class="selector-class">.del</span> &#123;<span class="attribute">text-decoration</span>: line-through;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* font-family */</span></span><br><span class="line">	<span class="selector-class">.fa</span>&#123;<span class="attribute">font-family</span>:Arial;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* margin */</span></span><br><span class="line">	<span class="selector-class">.m0</span>  &#123;<span class="attribute">margin</span>:<span class="number">0px</span>;&#125; <span class="selector-class">.m5</span> &#123;<span class="attribute">margin</span>:<span class="number">5px</span>;&#125; <span class="selector-class">.m10</span> &#123;<span class="attribute">margin</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.m15</span> &#123;<span class="attribute">margin</span>:<span class="number">15px</span>;&#125; <span class="selector-class">.m20</span> &#123;<span class="attribute">margin</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.m25</span> &#123;<span class="attribute">margin</span>:<span class="number">25px</span>;&#125; <span class="selector-class">.m30</span> &#123;<span class="attribute">margin</span>:<span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.mt5</span> &#123;<span class="attribute">margin-top</span>:<span class="number">5px</span>;&#125; <span class="selector-class">.mt10</span> &#123;<span class="attribute">margin-top</span>: <span class="number">10px</span>;&#125; <span class="selector-class">.mt15</span> &#123;<span class="attribute">margin-top</span>: <span class="number">10px</span>;&#125; <span class="selector-class">.mt20</span> &#123;<span class="attribute">margin-top</span>: <span class="number">20px</span>;&#125; <span class="selector-class">.mt25</span> &#123;<span class="attribute">margin-top</span>: <span class="number">20px</span>;&#125; <span class="selector-class">.mt30</span> &#123;<span class="attribute">margin-top</span>: <span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.ml5</span> &#123;<span class="attribute">margin-left</span>:<span class="number">5px</span>;&#125; <span class="selector-class">.ml10</span> &#123;<span class="attribute">margin-left</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.ml15</span> &#123;<span class="attribute">margin-left</span>:<span class="number">15px</span>;&#125; <span class="selector-class">.ml20</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.ml25</span> &#123;<span class="attribute">margin-left</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.ml30</span> &#123;<span class="attribute">margin-left</span>:<span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.mb5</span> &#123;<span class="attribute">margin-bottom</span>:<span class="number">5px</span>;&#125; <span class="selector-class">.mb10</span> &#123;<span class="attribute">margin-bottom</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.mb15</span> &#123;<span class="attribute">margin-bottom</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.mb20</span> &#123;<span class="attribute">margin-bottom</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.mb25</span> &#123;<span class="attribute">margin-bottom</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.mb30</span> &#123;<span class="attribute">margin-bottom</span>:<span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.mr5</span> &#123;<span class="attribute">margin-right</span>:<span class="number">5px</span>;&#125; <span class="selector-class">.mr10</span> &#123;<span class="attribute">margin-right</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.mr15</span> &#123;<span class="attribute">margin-right</span>:<span class="number">15px</span>;&#125; <span class="selector-class">.mr20</span> &#123;<span class="attribute">margin-right</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.mr25</span> &#123;<span class="attribute">margin-right</span>:<span class="number">25px</span>;&#125; <span class="selector-class">.mr30</span> &#123;<span class="attribute">margin-right</span>:<span class="number">30px</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* padding */</span></span><br><span class="line">	<span class="selector-class">.p0</span>  &#123;<span class="attribute">padding</span>:<span class="number">0px</span>;&#125; <span class="selector-class">.p5</span> &#123;<span class="attribute">padding</span>:<span class="number">5px</span>;&#125; <span class="selector-class">.p10</span> &#123;<span class="attribute">padding</span>:<span class="number">10px</span>;&#125; <span class="selector-class">.p15</span> &#123;<span class="attribute">padding</span>:<span class="number">15px</span>;&#125; <span class="selector-class">.p20</span> &#123;<span class="attribute">padding</span>:<span class="number">20px</span>;&#125; <span class="selector-class">.p25</span> &#123;<span class="attribute">padding</span>:<span class="number">25px</span>;&#125; <span class="selector-class">.p30</span> &#123;<span class="attribute">padding</span>:<span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.pt5</span> &#123;<span class="attribute">padding-top</span>: <span class="number">5px</span>;&#125; <span class="selector-class">.pt10</span> &#123;<span class="attribute">padding-top</span>: <span class="number">10px</span>;&#125; <span class="selector-class">.pt15</span> &#123;<span class="attribute">padding-top</span>: <span class="number">15px</span>;&#125; <span class="selector-class">.pt20</span> &#123;<span class="attribute">padding-top</span>: <span class="number">20px</span>;&#125; <span class="selector-class">.pt25</span> &#123;<span class="attribute">padding-top</span>: <span class="number">25px</span>;&#125; <span class="selector-class">.pt30</span> &#123;<span class="attribute">padding-top</span>: <span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.pl5</span> &#123;<span class="attribute">padding-left</span>: <span class="number">5px</span>;&#125; <span class="selector-class">.pl10</span> &#123;<span class="attribute">padding-left</span>: <span class="number">10px</span>;&#125; <span class="selector-class">.pl15</span> &#123;<span class="attribute">padding-left</span>: <span class="number">15px</span>;&#125; <span class="selector-class">.pl20</span> &#123;<span class="attribute">padding-left</span>: <span class="number">20px</span>;&#125;<span class="selector-class">.pl25</span> &#123;<span class="attribute">padding-left</span>: <span class="number">25px</span>;&#125; <span class="selector-class">.pl30</span> &#123;<span class="attribute">padding-left</span>: <span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.pb5</span> &#123;<span class="attribute">padding-bottom</span>: <span class="number">5px</span>;&#125; <span class="selector-class">.pb10</span> &#123;<span class="attribute">padding-bottom</span>: <span class="number">10px</span>;&#125; <span class="selector-class">.pb15</span> &#123;<span class="attribute">padding-bottom</span>: <span class="number">15px</span>;&#125; <span class="selector-class">.pb20</span> &#123;<span class="attribute">padding-bottom</span>: <span class="number">20px</span>;&#125; <span class="selector-class">.pb25</span> &#123;<span class="attribute">padding-bottom</span>: <span class="number">25px</span>;&#125; <span class="selector-class">.pb30</span> &#123;<span class="attribute">padding-bottom</span>: <span class="number">30px</span>;&#125;</span><br><span class="line">	<span class="selector-class">.pr5</span> &#123;<span class="attribute">padding-right</span>: <span class="number">5px</span>;&#125; <span class="selector-class">.pr10</span> &#123;<span class="attribute">padding-right</span>: <span class="number">10px</span>;&#125; <span class="selector-class">.pr15</span> &#123;<span class="attribute">padding-right</span>: <span class="number">15px</span>;&#125; <span class="selector-class">.pr20</span> &#123;<span class="attribute">padding-right</span>: <span class="number">20px</span>;&#125; <span class="selector-class">.pr25</span> &#123;<span class="attribute">padding-right</span>: <span class="number">25px</span>;&#125; <span class="selector-class">.pr30</span> &#123;<span class="attribute">padding-right</span>: <span class="number">30px</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*display*/</span></span><br><span class="line">	<span class="selector-class">.dn</span>&#123;<span class="attribute">display</span>:none;&#125; <span class="selector-class">.di</span>&#123;<span class="attribute">display</span>:inline;&#125; <span class="selector-class">.db</span>&#123;<span class="attribute">display</span>:block;&#125; <span class="selector-class">.dib</span>&#123;<span class="attribute">display</span>:inline-block;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*border*/</span></span><br><span class="line">	<span class="selector-class">.bdr</span> &#123;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#f2f2f2</span>;&#125; <span class="selector-class">.bdr-l</span> &#123;<span class="attribute">border-left</span>:<span class="number">1px</span> solid <span class="number">#f2f2f2</span>;&#125; <span class="selector-class">.bdr-r</span> &#123;<span class="attribute">border-right</span>:<span class="number">1px</span> solid <span class="number">#f2f2f2</span>;&#125; <span class="selector-class">.bdr-t</span> &#123;<span class="attribute">border-top</span>:<span class="number">1px</span> solid <span class="number">#f2f2f2</span>;&#125; <span class="selector-class">.bdr-b</span> &#123;<span class="attribute">border-bottom</span>:<span class="number">1px</span> solid <span class="number">#f2f2f2</span>;&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/*color*/</span></span><br><span class="line">	<span class="selector-class">.c-3</span> &#123;<span class="attribute">color</span>:<span class="number">#333</span>;&#125; <span class="selector-class">.c-6</span> &#123;<span class="attribute">color</span>:<span class="number">#666</span>;&#125; <span class="selector-class">.c-8</span> &#123;<span class="attribute">color</span>:<span class="number">#888</span>;&#125; <span class="selector-class">.c-9</span> &#123;<span class="attribute">color</span>:<span class="number">#999</span>;&#125;</span><br><span class="line">	<span class="selector-class">.c-rd</span> &#123;<span class="attribute">color</span>: <span class="number">#F44336</span>;&#125; <span class="selector-class">.c-bl</span> &#123;<span class="attribute">color</span>: <span class="number">#0894EC</span>;&#125; <span class="selector-class">.c-wt</span> &#123;<span class="attribute">color</span>: <span class="number">#FFFFFF</span>;&#125; <span class="selector-class">.c-gr</span> &#123;<span class="attribute">color</span>: <span class="number">#4CD964</span>;&#125; <span class="selector-class">.c-or</span> &#123;<span class="attribute">color</span>: <span class="number">#FF6600</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*backgroud-color*/</span></span><br><span class="line">	<span class="selector-class">.bg-wt</span> &#123; <span class="attribute">background-color</span>: <span class="number">#fff</span>; &#125;<span class="selector-class">.bg-f5</span> &#123; <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>; &#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/*float &amp; position*/</span></span><br><span class="line">	<span class="selector-class">.l</span> &#123;<span class="attribute">float</span>: left;&#125;<span class="selector-class">.r</span> &#123;<span class="attribute">float</span>: right;&#125;</span><br><span class="line">	<span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;<span class="attribute">display</span>: table;<span class="attribute">content</span>: <span class="string">" "</span>;&#125;<span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;<span class="attribute">clear</span>: both;&#125;</span><br><span class="line">	<span class="selector-class">.rel</span> &#123;<span class="attribute">position</span>: relative;&#125;<span class="selector-class">.abs</span> &#123;<span class="attribute">position</span>: absolute;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* align */</span></span><br><span class="line">	<span class="selector-class">.vt</span> &#123;<span class="attribute">vertical-align</span>: top;&#125;<span class="selector-class">.vb</span> &#123;<span class="attribute">vertical-align</span>: bottom;&#125;<span class="selector-class">.vm</span> &#123;<span class="attribute">vertical-align</span>: middle;&#125;</span><br><span class="line">	<span class="selector-class">.tc</span> &#123;<span class="attribute">text-align</span>: center;&#125; <span class="selector-class">.tl</span> &#123;<span class="attribute">text-align</span>: left;&#125; <span class="selector-class">.tr</span> &#123;<span class="attribute">text-align</span>: right;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* overflow */</span></span><br><span class="line">	<span class="selector-class">.ovh</span>&#123;<span class="attribute">overflow</span>:hidden;&#125; <span class="selector-class">.ova</span>&#123;<span class="attribute">overflow</span>:auto;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* visibility */</span></span><br><span class="line">	<span class="selector-class">.vh</span>&#123;<span class="attribute">visibility</span>:hidden;&#125;<span class="selector-class">.vv</span>&#123;<span class="attribute">visibility</span>:visible;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*hide scrollbar*/</span></span><br><span class="line">	<span class="selector-class">.no-scroll</span> &#123;<span class="attribute">overflow</span>: hidden <span class="meta">!important</span>; <span class="attribute">height</span>: <span class="number">100%</span> <span class="meta">!important</span>;&#125;<span class="selector-class">.no-scroll</span> <span class="selector-tag">body</span> &#123;<span class="attribute">overflow</span>: hidden; <span class="attribute">height</span>: <span class="number">100%</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*divider line*/</span></span><br><span class="line">	<span class="selector-class">.dvd-x</span> &#123;<span class="attribute">display</span>: block;<span class="attribute">font-size</span>: <span class="number">0</span>; <span class="attribute">height</span>: <span class="number">1px</span>; <span class="attribute">clear</span>: both;&#125;</span><br><span class="line">	<span class="selector-class">.dvd-y</span> &#123;<span class="attribute">display</span>:inline-block; <span class="attribute">font-size</span>: <span class="number">0</span>; <span class="attribute">width</span>: <span class="number">1px</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* ellipsis */</span></span><br><span class="line">	<span class="selector-class">.ell</span>&#123;<span class="attribute">text-overflow</span>:ellipsis; <span class="attribute">white-space</span>:nowrap; <span class="attribute">overflow</span>:hidden;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*transition*/</span></span><br><span class="line">	<span class="selector-class">.trans</span>&#123;<span class="attribute">-ms-transition</span>:all <span class="number">0.2s</span>; <span class="attribute">-webkit-transition</span>:all <span class="number">0.2s</span>; <span class="attribute">transition</span>:all <span class="number">0.2s</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://www.qiakr.com/qkfe/2016/07/21/tool-css/" data-id="ciqwa5zlv000bwjc9511sqaaw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2016/07/21/tool-css/" data-title="CSS工具类使用说明" data-url="http://www.qiakr.com/qkfe/2016/07/21/tool-css/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我们 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/git-lt/qkfe/tree/master" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/qkfe/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/qkfe/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/qkfe/2016/07/17/AMD-Module-guide/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">模块编写规范</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/21/tool-css/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400)" alt="CSS工具类使用说明" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/21/tool-css/" class="title">CSS工具类使用说明</a></p>
+                            <p class="item-date"><time datetime="2016-07-21T12:09:58.000Z" itemprop="datePublished">2016-07-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/17/AMD-Module-guide/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400)" alt="模块编写规范" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/17/AMD-Module-guide/" class="title">模块编写规范</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T08:03:53.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/17/Component-define-guide/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/HammockCypress_ZH-CN10587366950_1920x1080.jpg?imageView2/1/w/720/h/400)" alt="组件编写规范" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/17/Component-define-guide/" class="title">组件编写规范</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T08:03:53.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/17/array-methods/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/blog-002.jpg?imageView2/1/w/720/h/400)" alt="数组方法介绍" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/17/array-methods/" class="title">数组方法介绍</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T04:00:27.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/17/html-table/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/blog-8070819_8070819_1308583954215.jpg?imageView2/1/w/720/h/400)" alt="HTML标签之Table" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/17/html-table/" class="title">HTML标签之Table</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T04:00:27.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/qkfe/tags/js/">js</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/qkfe/tags/js/" style="font-size: 10px;">js</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.qiakr.com/">洽客官网</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/qkfe/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 LT</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'togglelt'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+    
+        <script src="/qkfe/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/qkfe/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/qkfe/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/qkfe/js/main.js"></script>
+
+    </div>
+</body>
+</html>
