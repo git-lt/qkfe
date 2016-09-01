@@ -5,7 +5,7 @@
   <link href="/qkfe/atom.xml" rel="self"/>
   
   <link href="http://www.qiakr.com/"/>
-  <updated>2016-07-21T12:11:34.000Z</updated>
+  <updated>2016-09-01T03:09:29.000Z</updated>
   <id>http://www.qiakr.com/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于 koa + gulp 的前端工程构建工具</title>
+    <link href="http://www.qiakr.com/2016/09/01/velocity-koa-gulp/"/>
+    <id>http://www.qiakr.com/2016/09/01/velocity-koa-gulp/</id>
+    <published>2016-09-01T02:57:50.000Z</published>
+    <updated>2016-09-01T03:09:29.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;该工具用于移动端和微商城相关H5页面，用于搭建简易的前端web服务，mock服务，优化velocity页面中嵌入的css与js，并提供实时编辑预览功能。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;适用场景&quot;&gt;&lt;a href=&quot;#适用场景&quot; class=&quot;headerlink&quot; title=&quot;适用场景&quot;&gt;&lt;/a&gt;适用场景&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;使用velocity模板的H5多页项目&lt;/li&gt;
+&lt;li&gt;还没有实现组件化，css与js是嵌入在页面中的活动页面或简单页面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerlink&quot; title=&quot;特点&quot;&gt;&lt;/a&gt;特点&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;对于现有的Java项目目录结构没有侵入性&lt;/li&gt;
+&lt;li&gt;通过node版的velocity模板引擎生成独立的前端web服务&lt;/li&gt;
+&lt;li&gt;对多页面中内嵌的css与js进行优化&lt;/li&gt;
+&lt;li&gt;自动生成对应的css雪碧图&lt;/li&gt;
+&lt;li&gt;使用mock服务模拟数据请求&lt;/li&gt;
+&lt;li&gt;基于livereload的实时刷新预览&lt;/li&gt;
+&lt;li&gt;监听文件变动，自动构建新的版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h2&gt;&lt;p&gt;此项目主要针对移动端多页面的优化，项目中的H5页面，特点是引用一个公共的css，js引用cdn上的公共js，而与页面相关的css与js直接嵌入在页面中（减少请求数量）&lt;/p&gt;
+&lt;p&gt;在没有打包构建工具的情况下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;css3相关新特性需要手动添加各版本和浏览器前缀&lt;/li&gt;
+&lt;li&gt;雪碧图、base64图片需要手动生成，然后再应用到css&lt;/li&gt;
+&lt;li&gt;css并没有做相关优化压缩处理&lt;/li&gt;
+&lt;li&gt;js没有做语法检查和优化压缩&lt;/li&gt;
+&lt;li&gt;使用velocity模板强依赖后端java环境&lt;/li&gt;
+&lt;li&gt;不能实时编辑 实时预览&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;构建流程&quot;&gt;&lt;a href=&quot;#构建流程&quot; class=&quot;headerlink&quot; title=&quot;构建流程&quot;&gt;&lt;/a&gt;构建流程&lt;/h2&gt;&lt;h3 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;读取xx.vm页面&lt;/li&gt;
+&lt;li&gt;提取内嵌的CSS、JS&lt;/li&gt;
+&lt;li&gt;合并css、js，去掉多余的标签，只保留最后一个&lt;/li&gt;
+&lt;li&gt;根据css提取雪碧图，压缩雪碧图，生成base64图片，生成新的css，重新嵌入到xx.vm中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE%202016-09-01%2008%E6%97%B628%E5%88%8634%E7%A7%92.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;处理css、js&quot;&gt;&lt;a href=&quot;#处理css、js&quot; class=&quot;headerlink&quot; title=&quot;处理css、js&quot;&gt;&lt;/a&gt;处理css、js&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE%202016-09-01%2008%E6%97%B629%E5%88%8623%E7%A7%92.jpg&quot; width=&quot;400px&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;替换&quot;&gt;&lt;a href=&quot;#替换&quot; class=&quot;headerlink&quot; title=&quot;替换&quot;&gt;&lt;/a&gt;替换&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;替换xx.vm中的css、js&lt;/li&gt;
+&lt;li&gt;压缩xx.vm&lt;/li&gt;
+&lt;li&gt;发布到相关目录&lt;/li&gt;
+&lt;li&gt;启动livereload监听服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE%202016-09-01%2008%E6%97%B629%E5%88%8639%E7%A7%92.jpg&quot; width=&quot;400px&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;gulp-任务列表&quot;&gt;&lt;a href=&quot;#gulp-任务列表&quot; class=&quot;headerlink&quot; title=&quot;gulp 任务列表&quot;&gt;&lt;/a&gt;gulp 任务列表&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/%E6%88%AA%E5%9B%BE%202016-09-01%2008%E6%97%B630%E5%88%8604%E7%A7%92.jpg&quot; width=&quot;400px&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;需要注意的问题&quot;&gt;&lt;a href=&quot;#需要注意的问题&quot; class=&quot;headerlink&quot; title=&quot;需要注意的问题&quot;&gt;&lt;/a&gt;需要注意的问题&lt;/h2&gt;&lt;p&gt;在build:init之后，调用生成雪碧图的插件生成的css不一定适用，通常背景图片在使用REM做定位时，不同的屏幕宽度下，图片会错位，所以应将背景图定位改成父类相对定位，添加伪类绝对定位，并放大10倍或100倍，然后再使用css3缩放属性缩小相应的倍数，以提高背景图定位的精确度。&lt;br&gt;具体参考：&lt;a href=&quot;http://www.html-js.com/article/JavaScript-learning-notes%203234&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;移动端web app自适应布局探索与总结&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/git-lt/velocity-koa-gulp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;该工具用于移动端和微商城相关H5页面，用于搭建简易的前端web服务，mock服务，优化velocity页面中嵌入的css与js，并提供实时编辑预览功能。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web开发" scheme="http://www.qiakr.com/categories/web%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>CSS工具类使用说明</title>
