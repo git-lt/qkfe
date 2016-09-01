@@ -5,7 +5,7 @@
   <link href="/qkfe/atom.xml" rel="self"/>
   
   <link href="http://www.qiakr.com/"/>
-  <updated>2016-09-01T03:09:29.000Z</updated>
+  <updated>2016-09-01T03:26:46.000Z</updated>
   <id>http://www.qiakr.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://www.qiakr.com/2016/09/01/velocity-koa-gulp/"/>
     <id>http://www.qiakr.com/2016/09/01/velocity-koa-gulp/</id>
     <published>2016-09-01T02:57:50.000Z</published>
-    <updated>2016-09-01T03:09:29.000Z</updated>
+    <updated>2016-09-01T03:26:46.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/adaf2edda3cc7cd93681bf913901213fb90e91ce.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;该工具用于移动端和微商城相关H5页面，用于搭建简易的前端web服务，mock服务，优化velocity页面中嵌入的css与js，并提供实时编辑预览功能。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;适用场景&quot;&gt;&lt;a href=&quot;#适用场景&quot; class=&quot;headerlink&quot; title=&quot;适用场景&quot;&gt;&lt;/a&gt;适用场景&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;使用velocity模板的H5多页项目&lt;/li&gt;
@@ -69,13 +69,225 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/adaf2edda3cc7cd93681bf913901213fb90e91ce.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;该工具用于移动端和微商城相关H5页面，用于搭建简易的前端web服务，mock服务，优化velocity页面中嵌入的css与js，并提供实时编辑预览功能。&lt;br&gt;
     
     </summary>
     
       <category term="web开发" scheme="http://www.qiakr.com/categories/web%E5%BC%80%E5%8F%91/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>CSS实现垂直水平居中</title>
+    <link href="http://www.qiakr.com/2016/08/21/css-center/"/>
+    <id>http://www.qiakr.com/2016/08/21/css-center/</id>
+    <published>2016-08-21T03:20:51.000Z</published>
+    <updated>2016-09-01T03:26:33.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;水平垂直居中显示，这种展示用CSS来实现又是比较棘手的一件事，但有各种hack的方式可以实现，各有优缺点，兼容性也各有不同，这里举例几种常见的实现方式。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###1、绝对定位居中（子元素需设置宽高）&lt;br&gt;内容块的父容器：position:relative;&lt;br&gt;子元素：position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin:auto; （必须设置高度）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原理：元素在过度受限情况下，将margin设置为auto，浏览器会重算margin的值，过度受限指的是同时设置top/bottom与height或者left/right与width。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###2、绝对定位配合margin（子元素需设置宽高）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原理：top：50%元素上边界位于包含框中点，设置负外边界使得元素垂直中心与包含框中心重合；&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;第一种&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+       .one{
+           border: 1px solid red;
+           width: 200px;height: 200px;
+           position: relative;
+       }
+       .two{
+           background: red;
+           width: 100px;height: 100px
+           position: absolute;left: 50%;top:50%;
+           margin: -50px 0 0 -50px;          
+          （margin设置百分比是相当于自身的高度与宽度）
+       }
+   &amp;lt;/style&amp;gt;
+   &amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+       &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+   &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;第二种&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+    .one{
+        border: 1px solid red;
+        width: 300px;height: 300px;
+        position: relative;
+    }
+    .two{
+        position:absolute;
+        top:50%;
+        left:0;
+        right:0;
+        margin:auto;
+        margin-top:-100px;
+        （margin设置百分比是相当于自身的高度与宽度）
+        width:200px;
+        height:200px;
+        background: red;
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###3、table-cell方式（子元素不需设置宽高）&lt;br&gt;父容器：display:table-cell;text-align:center;vertical-align:middle;（设置宽高）&lt;br&gt;子元素：display:inline-block;vertical-align:middle;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原理：利用表格布局的特点，vertical-align设置为middle;单元格中的内容与所在行中间对齐&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        display:table-cell;vertical-align:middle;text-align: center;
+    }
+    .two{
+        background: red;
+        (1)display:inline-block;(用此方法向上偏差2px)
+        (2)margin:auto（垂直水平居中）
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;11111111111&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###4、通过添加空span标签使图片居中（子元素需设置宽高）&lt;br&gt;父容器：text-align: center;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;&lt;br&gt;display: inline-block;   将行内元素改变为行内块元素显示&lt;br&gt;width: 1px;              实现ＩＥ下可读效果&lt;br&gt;height: 100%;            使用元素高度和图片容器高度一样&lt;br&gt;vertical-align: middle;  垂直对齐&lt;br&gt;图片：vertical-align: middle;   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        text-align: center;
+    }
+    span{
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        vertical-align: middle;
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+    &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;img src=&amp;quot;../img/jian.png&amp;quot; alt=&amp;quot;&amp;quot;&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###5、外边距margin取负数，大小为width/height（不使用box-sizing: border-box时包括padding，）的一半，再加上top: 50%; left: 50%;。&lt;br&gt;（子元素需设置宽高）&lt;br&gt;    &lt;style&gt;&lt;br&gt;        .one{&lt;br&gt;            border: 1px solid red;&lt;br&gt;            width: 200px;height: 200px;&lt;br&gt;            position: relative;&lt;br&gt;        }&lt;br&gt;        .two{&lt;br&gt;            background: red;&lt;br&gt;            width: 30px;&lt;br&gt;            height: 20px;&lt;br&gt;            padding: 20px;&lt;br&gt;            position: absolute;&lt;br&gt;            top: 50%; left: 50%;&lt;br&gt;            margin-left: -35px; /&lt;em&gt; (width + padding)/2 &lt;/em&gt;/&lt;br&gt;            margin-top: -30px; /&lt;em&gt; (height + padding)/2 &lt;/em&gt;/&lt;br&gt;        }&lt;br&gt;    &lt;/style&gt;&lt;br&gt;    &lt;div class=&quot;one&quot;&gt;&lt;br&gt;        &lt;span&gt;&lt;/span&gt;&lt;br&gt;        &lt;div class=&quot;two&quot;&gt;&lt;/div&gt;&lt;br&gt;    &lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;###6、内容定义transform:translate(-50%,-50%),并且加上top：50%；left：50%。（子元素需设置宽高）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+        position: relative;
+    }
+    .two{
+        background: red;
+        width: 50%;
+        height: 30%;
+        margin: auto;
+        position: absolute;
+        top: 50%; left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+    &amp;lt;span&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###7、增加额外子元素设置margin-bottom为内容元素的高度+padding的一半。（不能实现水平垂直居中，仅垂直居中）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原理与2方法类似，floater的下边界是包含框的中心线，负下外边界保证center的中心线与包含框中心线重合&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+    .one{
+        border: 1px solid red;
+        width: 200px;height: 200px;
+    }
+    .floater{
+        float: left;
+        height: 50%;
+        width: 100%;
+        margin-bottom: -10%;
+    }
+    .two{
+        clear: both;
+        height: 20%;
+        background: red;
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;floater&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+    &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###8、inline-block方式（子元素不需设置宽高）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原理：为同一行的inline-block元素设置vertical-align：middle，该行内的inline-block元素会按照元素的垂直中心线对齐。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+    .one{
+        border: 1px solid red;
+        width: 300px;height: 300px;
+        text-align: center;
+    }
+    .one:after{
+        content: &amp;apos;&amp;apos;;
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+    .two{
+        background: red;
+        display:inline-block;
+        vertical-align:middle;
+    }
+&amp;lt;/style&amp;gt;
+&amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;11111111111111111111&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###9、弹性盒式布局（子元素不需设置宽高）&lt;br&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes#.E5.BC.B9.E6.80.A7.E7.9B.92.E6.A6.82.E5.BF.B5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS弹性盒&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;style&amp;gt;
+   (1) .one{
+           border: 1px solid red;
+           width: 300px;height: 300px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+       .two{
+           background: red;
+       }
+   (2) .one{
+           border: 1px solid red;
+           width: 300px;height: 300px;
+           display: flex;
+       }
+       .two{
+           background: red;
+           margin:auto;
+       }
+   &amp;lt;/style&amp;gt;
+   &amp;lt;div class=&amp;quot;one&amp;quot;&amp;gt;
+       &amp;lt;div class=&amp;quot;two&amp;quot;&amp;gt;111111111111&amp;lt;/div&amp;gt;
+   &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;水平垂直居中显示，这种展示用CSS来实现又是比较棘手的一件事，但有各种hack的方式可以实现，各有优缺点，兼容性也各有不同，这里举例几种常见的实现方式。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="web开发" scheme="http://www.qiakr.com/tags/web%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -120,65 +332,6 @@
     
       &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;旨在现在的CSS框架下去快速修正个别样式，减少添加CSS的工作量，但不可滥用工具类，如列表项的样式较多里，并不实用，常用于容器类型的标签，建议样式在三个左右时，使用工具类组合，四个以上时，添加独立的class&lt;br&gt;
-    
-    </summary>
-    
-      <category term="web开发" scheme="http://www.qiakr.com/categories/web%E5%BC%80%E5%8F%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>模块编写规范</title>
-    <link href="http://www.qiakr.com/2016/07/17/AMD-Module-guide/"/>
-    <id>http://www.qiakr.com/2016/07/17/AMD-Module-guide/</id>
-    <published>2016-07-17T08:03:53.000Z</published>
-    <updated>2016-07-17T08:30:16.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;是编写模块还是编写组件？&quot;&gt;&lt;a href=&quot;#是编写模块还是编写组件？&quot; class=&quot;headerlink&quot; title=&quot;是编写模块还是编写组件？&quot;&gt;&lt;/a&gt;是编写模块还是编写组件？&lt;/h2&gt;&lt;h3 id=&quot;模块与组件的区别&quot;&gt;&lt;a href=&quot;#模块与组件的区别&quot; class=&quot;headerlink&quot; title=&quot;模块与组件的区别&quot;&gt;&lt;/a&gt;模块与组件的区别&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;组件：可重用，对独立功能生命周期的封装。对外提供统一的配置和调用接口。遵循开闭原则：对外扩展开放，对内修改关闭。&lt;/li&gt;
-&lt;li&gt;模块：不可重用，对一个业务处理的封装，有独有的业务处理代码，可调用各种组件。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;依赖jQuery的组件&quot;&gt;&lt;a href=&quot;#依赖jQuery的组件&quot; class=&quot;headerlink&quot; title=&quot;依赖jQuery的组件&quot;&gt;&lt;/a&gt;依赖jQuery的组件&lt;/h3&gt;&lt;p&gt;挂载为jQuery的静态方法 还是 挂载到jQuery的实例上？&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;挂载到jQuery的实例上: 页面上需要实例化多个功能一样的组件时，依赖页面上的DOM结构，依赖父容器初始化&lt;/li&gt;
-&lt;li&gt;挂载为jQuery的静态方法: 不依赖页面上的DOM，以处理数据为主&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;独立的组件&quot;&gt;&lt;a href=&quot;#独立的组件&quot; class=&quot;headerlink&quot; title=&quot;独立的组件&quot;&gt;&lt;/a&gt;独立的组件&lt;/h3&gt;&lt;p&gt;对纯数据层面的处理，比如常用的Utils模块、数据验证、xss模块、加密解密、cookie操作、特性检测等&lt;/p&gt;
-&lt;h2 id=&quot;设计思想&quot;&gt;&lt;a href=&quot;#设计思想&quot; class=&quot;headerlink&quot; title=&quot;设计思想&quot;&gt;&lt;/a&gt;设计思想&lt;/h2&gt;&lt;h3 id=&quot;由前往后&quot;&gt;&lt;a href=&quot;#由前往后&quot; class=&quot;headerlink&quot; title=&quot;由前往后&quot;&gt;&lt;/a&gt;由前往后&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;从前往后推，先构建使用方式和场景&lt;/li&gt;
-&lt;li&gt;首先应该想到的是组件或模块的使用方法，它有那些方法和属性，应该怎样初始化&lt;/li&gt;
-&lt;li&gt;需要预留怎么样的配置或接口去做模块的扩展&lt;/li&gt;
-&lt;li&gt;需要依赖的资源&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;结构和接口设计&quot;&gt;&lt;a href=&quot;#结构和接口设计&quot; class=&quot;headerlink&quot; title=&quot;结构和接口设计&quot;&gt;&lt;/a&gt;结构和接口设计&lt;/h3&gt;&lt;h4 id=&quot;模块全局变量&quot;&gt;&lt;a href=&quot;#模块全局变量&quot; class=&quot;headerlink&quot; title=&quot;模块全局变量&quot;&gt;&lt;/a&gt;模块全局变量&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;CONF 模块配置: api地址，公用的配置和常量&lt;/li&gt;
-&lt;li&gt;pageVM 模块数据模型: 如果页面有大量表单元素，使用avalon的VM模型做数据的双向绑定，如果没有，则不需要此变量&lt;/li&gt;
-&lt;li&gt;pageView 模块业务逻辑: 页面主逻辑对象，包含：init/bindEvents/getData/initComponents等方法，init中只对业务做初始化操作&lt;/li&gt;
-&lt;li&gt;init 对外接口: 提供对外统一调用初始化方法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;模块模板&quot;&gt;&lt;a href=&quot;#模块模板&quot; class=&quot;headerlink&quot; title=&quot;模块模板&quot;&gt;&lt;/a&gt;模块模板&lt;/h4&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;define([&lt;span class=&quot;string&quot;&gt;&#39;moment&#39;&lt;/span&gt;],&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;moment&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pageVM, CONF, pageView;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 模块配置 ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	CONF=&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		apiGetList:&lt;span class=&quot;string&quot;&gt;&#39;getOrderList.json&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 模块主逻辑处理 ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pageView = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 模块数据模型初始化 ] (建议有表单时使用)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			!pageVM &amp;amp;&amp;amp; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.initVM(); 			&lt;span class=&quot;comment&quot;&gt;//初始化ViewModel &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.initComponents();  &lt;span class=&quot;comment&quot;&gt;// 初始化组件：select2、tolltip、uploader&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getListData(); 	&lt;span class=&quot;comment&quot;&gt;//加载列表数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.selectChangeEv();  &lt;span class=&quot;comment&quot;&gt;//注册下拉框变化事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		initVM: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			pageVM = avalon.define(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				$id:&lt;span class=&quot;string&quot;&gt;&#39;recordsCtr&#39;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				searching:&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				searchPms:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					status:&lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					startTime:&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					endTime:&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					index:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					length:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				searchEv:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;e&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					e.preventDefault();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					pageVM.searching=&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					pageVM.searchPms.index=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					page.getListData();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		selectChangeEv: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; ... &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		initComponents: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; ... &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		getListData: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; ... &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 对外提供统一的调用接口 ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		init:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			pageView.init();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			avalon.scan();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;命名规则&quot;&gt;&lt;a href=&quot;#命名规则&quot; class=&quot;headerlink&quot; title=&quot;命名规则&quot;&gt;&lt;/a&gt;命名规则&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;接口名称： 以 &lt;code&gt;api&lt;/code&gt; 开头 + 接口名  &lt;code&gt;{apiGetSalesList:&amp;#39;getSalesList&amp;#39;}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;事件名称： 事件名称 + 以 &lt;code&gt;Ev&lt;/code&gt; 结尾 &lt;code&gt;changeColorEv&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;this指向修正：统一以 &lt;code&gt;_this&lt;/code&gt; 命名&lt;/li&gt;
-&lt;li&gt;jQuery变量以&lt;code&gt;$&lt;/code&gt;符号开头 &lt;code&gt;$btnSearch=$(&amp;#39;#btnSearch&amp;#39;)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;注意点&quot;&gt;&lt;a href=&quot;#注意点&quot; class=&quot;headerlink&quot; title=&quot;注意点&quot;&gt;&lt;/a&gt;注意点&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;每个模块 &lt;strong&gt;init&lt;/strong&gt; 是入口函数，也就是第一次加载时，整个模块代码顺序执行，以后的每次页面初始化，都只会执行init中的代码&lt;/li&gt;
-&lt;li&gt;每个模块 &lt;code&gt;VM&lt;/code&gt; 中 &lt;strong&gt;$id&lt;/strong&gt; 不允许重名&lt;/li&gt;
-&lt;li&gt;每个页面的artTemplate &lt;strong&gt;模板id&lt;/strong&gt; 不允许重名，因为模板有缓存，id相同会覆盖已有的模板&lt;/li&gt;
-&lt;li&gt;每个页面的DOM上的 &lt;strong&gt;id&lt;/strong&gt; 尽量不要相同&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;数据加载处理&quot;&gt;&lt;a href=&quot;#数据加载处理&quot; class=&quot;headerlink&quot; title=&quot;数据加载处理&quot;&gt;&lt;/a&gt;数据加载处理&lt;/h4&gt;&lt;p&gt;要考虑的问题：数据列表加载的重用性、Loading触发的时机、何时需要分页、点击分页的处理、搜索处理&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;getListData:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 构建查询参数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pms = $.extend(&amp;#123;&amp;#125;,pageVM.$model.searchPms),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		url = CONF.apiGetList,    &lt;span class=&quot;comment&quot;&gt;//数据加载接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$tbl = $(&lt;span class=&quot;string&quot;&gt;&#39;#listTbl&#39;&lt;/span&gt;),	  &lt;span class=&quot;comment&quot;&gt;//列表所在的容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$tbdBox = $(&lt;span class=&quot;string&quot;&gt;&#39;#listTbd&#39;&lt;/span&gt;),  &lt;span class=&quot;comment&quot;&gt;//列表项所在的tbody&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$total = $(&lt;span class=&quot;string&quot;&gt;&#39;#listTotal&#39;&lt;/span&gt;), &lt;span class=&quot;comment&quot;&gt;//数据总条数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$pageBox = $(&lt;span class=&quot;string&quot;&gt;&#39;#pageNumBox&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//分页容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pms.startTime = Utils.getUnixTime(pms.startTime);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pms.endTime = Utils.getUnixTime(pms.endTime);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 数据加载前显示Loading状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 异步加载数据，并返回 deffered 对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $.post(url, pms)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			.done(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(data.status===&lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; listData = data.result.orderList,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						count = data.result.count;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;// 显示总数据条数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					$total.text(count);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;//如果有数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(count&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;comment&quot;&gt;// 渲染数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						$tbdBox.html(template(&lt;span class=&quot;string&quot;&gt;&#39;list_record_tpl&#39;&lt;/span&gt;, &amp;#123;data: listData, url:CONF.orderUrl&amp;#125;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;comment&quot;&gt;// 如果总数据条数大于请求的数据条数，就显示分页&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(count &amp;gt; pms.length)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;							$pageBox.pagination(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								totalData:count,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								coping:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								showData:pms.length,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								callback:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;i&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									&lt;span class=&quot;comment&quot;&gt;// 计算起始索引&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									pms.index = (i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)*pms.length;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									&lt;span class=&quot;comment&quot;&gt;//显示Loading&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									&lt;span class=&quot;comment&quot;&gt;//加载数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									$.post(url,pms)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;										.done(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											&lt;span class=&quot;comment&quot;&gt;// 渲染数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											$tbdBox.html(template(&lt;span class=&quot;string&quot;&gt;&#39;list_record_tpl&#39;&lt;/span&gt;, &amp;#123;data: data.result.orderList, url:CONF.orderUrl&amp;#125;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											&lt;span class=&quot;comment&quot;&gt;// 隐藏Loading&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;										&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;							&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;comment&quot;&gt;// 清空分页和列表数据，并添加为空说明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						$tbdBox.html(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;tr&amp;gt;&amp;lt;td colspan=&quot;7&quot;&amp;gt;&amp;lt;p class=&quot;p20 c-8 text-center&quot;&amp;gt; 未查询到相关数据 &amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						$pageBox.html(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;// 提示加载失败信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					toastr.error(data.errmsg || &lt;span class=&quot;string&quot;&gt;&#39;服务器繁忙！&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			.always(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;comment&quot;&gt;//加载失败时，隐藏loading状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				pageVM.searching = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;
     
     </summary>
     
@@ -239,6 +392,66 @@
     
       &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/HammockCypress_ZH-CN10587366950_1920x1080.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;组件的封装有利用于代码的复用，封装统一的数据处理逻辑，对外提供接口，灵活配置与扩展，调用方便，利于维护。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web开发" scheme="http://www.qiakr.com/categories/web%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>模块编写规范</title>
+    <link href="http://www.qiakr.com/2016/07/17/AMD-Module-guide/"/>
+    <id>http://www.qiakr.com/2016/07/17/AMD-Module-guide/</id>
+    <published>2016-07-17T08:03:53.000Z</published>
+    <updated>2016-09-01T03:26:57.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;是编写模块还是编写组件？&quot;&gt;&lt;a href=&quot;#是编写模块还是编写组件？&quot; class=&quot;headerlink&quot; title=&quot;是编写模块还是编写组件？&quot;&gt;&lt;/a&gt;是编写模块还是编写组件？&lt;/h2&gt;&lt;h3 id=&quot;模块与组件的区别&quot;&gt;&lt;a href=&quot;#模块与组件的区别&quot; class=&quot;headerlink&quot; title=&quot;模块与组件的区别&quot;&gt;&lt;/a&gt;模块与组件的区别&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;组件：可重用，对独立功能生命周期的封装。对外提供统一的配置和调用接口。遵循开闭原则：对外扩展开放，对内修改关闭。&lt;/li&gt;
+&lt;li&gt;模块：不可重用，对一个业务处理的封装，有独有的业务处理代码，可调用各种组件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;依赖jQuery的组件&quot;&gt;&lt;a href=&quot;#依赖jQuery的组件&quot; class=&quot;headerlink&quot; title=&quot;依赖jQuery的组件&quot;&gt;&lt;/a&gt;依赖jQuery的组件&lt;/h3&gt;&lt;p&gt;挂载为jQuery的静态方法 还是 挂载到jQuery的实例上？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;挂载到jQuery的实例上: 页面上需要实例化多个功能一样的组件时，依赖页面上的DOM结构，依赖父容器初始化&lt;/li&gt;
+&lt;li&gt;挂载为jQuery的静态方法: 不依赖页面上的DOM，以处理数据为主&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;独立的组件&quot;&gt;&lt;a href=&quot;#独立的组件&quot; class=&quot;headerlink&quot; title=&quot;独立的组件&quot;&gt;&lt;/a&gt;独立的组件&lt;/h3&gt;&lt;p&gt;对纯数据层面的处理，比如常用的Utils模块、数据验证、xss模块、加密解密、cookie操作、特性检测等&lt;/p&gt;
+&lt;h2 id=&quot;设计思想&quot;&gt;&lt;a href=&quot;#设计思想&quot; class=&quot;headerlink&quot; title=&quot;设计思想&quot;&gt;&lt;/a&gt;设计思想&lt;/h2&gt;&lt;h3 id=&quot;由前往后&quot;&gt;&lt;a href=&quot;#由前往后&quot; class=&quot;headerlink&quot; title=&quot;由前往后&quot;&gt;&lt;/a&gt;由前往后&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;从前往后推，先构建使用方式和场景&lt;/li&gt;
+&lt;li&gt;首先应该想到的是组件或模块的使用方法，它有那些方法和属性，应该怎样初始化&lt;/li&gt;
+&lt;li&gt;需要预留怎么样的配置或接口去做模块的扩展&lt;/li&gt;
+&lt;li&gt;需要依赖的资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;结构和接口设计&quot;&gt;&lt;a href=&quot;#结构和接口设计&quot; class=&quot;headerlink&quot; title=&quot;结构和接口设计&quot;&gt;&lt;/a&gt;结构和接口设计&lt;/h3&gt;&lt;h4 id=&quot;模块全局变量&quot;&gt;&lt;a href=&quot;#模块全局变量&quot; class=&quot;headerlink&quot; title=&quot;模块全局变量&quot;&gt;&lt;/a&gt;模块全局变量&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;CONF 模块配置: api地址，公用的配置和常量&lt;/li&gt;
+&lt;li&gt;pageVM 模块数据模型: 如果页面有大量表单元素，使用avalon的VM模型做数据的双向绑定，如果没有，则不需要此变量&lt;/li&gt;
+&lt;li&gt;pageView 模块业务逻辑: 页面主逻辑对象，包含：init/bindEvents/getData/initComponents等方法，init中只对业务做初始化操作&lt;/li&gt;
+&lt;li&gt;init 对外接口: 提供对外统一调用初始化方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;模块模板&quot;&gt;&lt;a href=&quot;#模块模板&quot; class=&quot;headerlink&quot; title=&quot;模块模板&quot;&gt;&lt;/a&gt;模块模板&lt;/h4&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;define([&lt;span class=&quot;string&quot;&gt;&#39;moment&#39;&lt;/span&gt;],&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;moment&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pageVM, CONF, pageView;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 模块配置 ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	CONF=&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		apiGetList:&lt;span class=&quot;string&quot;&gt;&#39;getOrderList.json&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 模块主逻辑处理 ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pageView = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		init: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 模块数据模型初始化 ] (建议有表单时使用)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			!pageVM &amp;amp;&amp;amp; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.initVM(); 			&lt;span class=&quot;comment&quot;&gt;//初始化ViewModel&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.initComponents();  &lt;span class=&quot;comment&quot;&gt;// 初始化组件：select2、tolltip、uploader&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getListData(); 	&lt;span class=&quot;comment&quot;&gt;//加载列表数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.selectChangeEv();  &lt;span class=&quot;comment&quot;&gt;//注册下拉框变化事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		initVM: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			pageVM = avalon.define(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				$id:&lt;span class=&quot;string&quot;&gt;&#39;recordsCtr&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				searching:&lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				searchPms:&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					status:&lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					startTime:&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					endTime:&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					index:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					length:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				searchEv:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;e&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					e.preventDefault();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					pageVM.searching=&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					pageVM.searchPms.index=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					page.getListData();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		selectChangeEv: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; ... &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		initComponents: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; ... &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		getListData: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123; ... &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// [ &lt;span class=&quot;doctag&quot;&gt;TODO:&lt;/span&gt; 对外提供统一的调用接口 ]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		init:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			pageView.init();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			avalon.scan();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;命名规则&quot;&gt;&lt;a href=&quot;#命名规则&quot; class=&quot;headerlink&quot; title=&quot;命名规则&quot;&gt;&lt;/a&gt;命名规则&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;接口名称： 以 &lt;code&gt;api&lt;/code&gt; 开头 + 接口名  &lt;code&gt;{apiGetSalesList:&amp;#39;getSalesList&amp;#39;}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;事件名称： 事件名称 + 以 &lt;code&gt;Ev&lt;/code&gt; 结尾 &lt;code&gt;changeColorEv&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;this指向修正：统一以 &lt;code&gt;_this&lt;/code&gt; 命名&lt;/li&gt;
+&lt;li&gt;jQuery变量以&lt;code&gt;$&lt;/code&gt;符号开头 &lt;code&gt;$btnSearch=$(&amp;#39;#btnSearch&amp;#39;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;注意点&quot;&gt;&lt;a href=&quot;#注意点&quot; class=&quot;headerlink&quot; title=&quot;注意点&quot;&gt;&lt;/a&gt;注意点&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;每个模块 &lt;strong&gt;init&lt;/strong&gt; 是入口函数，也就是第一次加载时，整个模块代码顺序执行，以后的每次页面初始化，都只会执行init中的代码&lt;/li&gt;
+&lt;li&gt;每个模块 &lt;code&gt;VM&lt;/code&gt; 中 &lt;strong&gt;$id&lt;/strong&gt; 不允许重名&lt;/li&gt;
+&lt;li&gt;每个页面的artTemplate &lt;strong&gt;模板id&lt;/strong&gt; 不允许重名，因为模板有缓存，id相同会覆盖已有的模板&lt;/li&gt;
+&lt;li&gt;每个页面的DOM上的 &lt;strong&gt;id&lt;/strong&gt; 尽量不要相同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;数据加载处理&quot;&gt;&lt;a href=&quot;#数据加载处理&quot; class=&quot;headerlink&quot; title=&quot;数据加载处理&quot;&gt;&lt;/a&gt;数据加载处理&lt;/h4&gt;&lt;p&gt;要考虑的问题：数据列表加载的重用性、Loading触发的时机、何时需要分页、点击分页的处理、搜索处理&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;getListData:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 构建查询参数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; pms = $.extend(&amp;#123;&amp;#125;,pageVM.$model.searchPms),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		url = CONF.apiGetList,    &lt;span class=&quot;comment&quot;&gt;//数据加载接口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$tbl = $(&lt;span class=&quot;string&quot;&gt;&#39;#listTbl&#39;&lt;/span&gt;),	  &lt;span class=&quot;comment&quot;&gt;//列表所在的容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$tbdBox = $(&lt;span class=&quot;string&quot;&gt;&#39;#listTbd&#39;&lt;/span&gt;),  &lt;span class=&quot;comment&quot;&gt;//列表项所在的tbody&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$total = $(&lt;span class=&quot;string&quot;&gt;&#39;#listTotal&#39;&lt;/span&gt;), &lt;span class=&quot;comment&quot;&gt;//数据总条数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		$pageBox = $(&lt;span class=&quot;string&quot;&gt;&#39;#pageNumBox&#39;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//分页容器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pms.startTime = Utils.getUnixTime(pms.startTime);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	pms.endTime = Utils.getUnixTime(pms.endTime);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 数据加载前显示Loading状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;// 异步加载数据，并返回 deffered 对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $.post(url, pms)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			.done(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(data.status===&lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; listData = data.result.orderList,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						count = data.result.count;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;// 显示总数据条数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					$total.text(count);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;//如果有数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(count&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;comment&quot;&gt;// 渲染数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						$tbdBox.html(template(&lt;span class=&quot;string&quot;&gt;&#39;list_record_tpl&#39;&lt;/span&gt;, &amp;#123;data: listData, url:CONF.orderUrl&amp;#125;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;comment&quot;&gt;// 如果总数据条数大于请求的数据条数，就显示分页&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(count &amp;gt; pms.length)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;							$pageBox.pagination(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								totalData:count,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								coping:&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								showData:pms.length,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								callback:&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;i&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									&lt;span class=&quot;comment&quot;&gt;// 计算起始索引&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									pms.index = (i&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)*pms.length;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									&lt;span class=&quot;comment&quot;&gt;//显示Loading&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									&lt;span class=&quot;comment&quot;&gt;//加载数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;									$.post(url,pms)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;										.done(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;data&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											&lt;span class=&quot;comment&quot;&gt;// 渲染数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											$tbdBox.html(template(&lt;span class=&quot;string&quot;&gt;&#39;list_record_tpl&#39;&lt;/span&gt;, &amp;#123;data: data.result.orderList, url:CONF.orderUrl&amp;#125;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											&lt;span class=&quot;comment&quot;&gt;// 隐藏Loading&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;											$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;										&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;								&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;							&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						&lt;span class=&quot;comment&quot;&gt;// 清空分页和列表数据，并添加为空说明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						$tbdBox.html(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;tr&amp;gt;&amp;lt;td colspan=&quot;7&quot;&amp;gt;&amp;lt;p class=&quot;p20 c-8 text-center&quot;&amp;gt; 未查询到相关数据 &amp;lt;/p&amp;gt;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;						$pageBox.html(&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					&lt;span class=&quot;comment&quot;&gt;// 提示加载失败信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;					toastr.error(data.errmsg || &lt;span class=&quot;string&quot;&gt;&#39;服务器繁忙！&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			.always(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				&lt;span class=&quot;comment&quot;&gt;//加载失败时，隐藏loading状态&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				$tbl.uiLoading(&lt;span class=&quot;string&quot;&gt;&#39;lg&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;				pageVM.searching = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/1246515077564.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;React或Vue给我来带来的不是仅仅是View层的改变和便捷的组件化开发，更多的是围绕这套开发体系，整个技术栈的应用和实践。&lt;br&gt;但很多管理系统还是基于传统的AMD或CMD开发，配合Jquery插件使用，所以日常的组件和模块编写应该有一定的规范，以减少多人配合开发的沟通成本，统一编码风格，便于维护管理，也便于后期重构切换到新的技术栈。&lt;br&gt;
     
     </summary>
     
