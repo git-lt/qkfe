@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Vuex基础入门 | 洽客前端</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="js" />
+    
+    <meta name="description" content="多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vuex基础入门">
+<meta property="og:url" content="http://www.qiakr.com/2016/11/02/vuex-base/index.html">
+<meta property="og:site_name" content="洽客前端">
+<meta property="og:description" content="多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。">
+<meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400">
+<meta property="og:updated_time" content="2016-11-02T07:48:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vuex基础入门">
+<meta name="twitter:description" content="多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。">
+<meta name="twitter:image" content="http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/qkfe/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/qkfe/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/qkfe/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/qkfe/css/style.css">
+
+    <script src="/qkfe/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/qkfe/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/qkfe/vendor/scrollLoading/style.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2b4e0202baeda5f901b13a86cf9d65cf";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/qkfe/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">洽客技术团队 （QKED）</p>
+                            <p class="description">Talk is cheap, Show me the code.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/qkfe/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/qkfe/categories/web开发/">web开发</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/qkfe/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/qkfe/',
+        CONTENT_URL: '/qkfe/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/qkfe/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/qkfe/categories/web开发/">web开发</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-vuex-base" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Vuex基础入门
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/qkfe/2016/11/02/vuex-base/" class="article-date">
+    <time datetime="2016-11-02T07:46:24.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qkfe/tags/js/">js</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400" alt=""><br>多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。<br>理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。<br><a id="more"></a></p>
+<h3 id="通信原则-Props-Down-Events-Up"><a href="#通信原则-Props-Down-Events-Up" class="headerlink" title="通信原则 Props Down  Events Up"></a>通信原则 Props Down  Events Up</h3><p>父组件向子组件传递数据使用 props<br>子组件向父组件传递数据使用 event</p>
+<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><p>组件实例的作用域是孤立的<br>不应该在子组件的模板内直接引用父组件的数据</p>
+<p><code>prop</code> 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是不会反过来。这是为了防止子组件无意修改了父组件的状态——<br>这会让应用的数据流难以理解。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在父组件中使用props传递给子组件</span></span><br><span class="line">&lt;child message=<span class="string">"hello!"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义子组件</span></span><br><span class="line">Vue.component(<span class="string">'child'</span>, &#123;</span><br><span class="line">  <span class="comment">// 声明 props</span></span><br><span class="line">  props: [<span class="string">'message'</span>],</span><br><span class="line">  <span class="comment">// props可以像data一样，使用this.message访问</span></span><br><span class="line">  template: <span class="string">'&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h3><p>在父组件中使用指令 v-on:cusEvent 绑定自定义事件<br>在子组件中使用指令 v-on:click=”this.$emit(‘cusEvent’, args1, args2 )” 来触发父组件的事件，并传递参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父组件绑定自定义事件increment</span></span><br><span class="line">&lt;button-counter v-on:increment=<span class="string">"incrementTotal"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//子组件通过this.$emit('increment')触发父组件绑定的事件</span><br><span class="line">Vue.component('button-counter', &#123;</span><br><span class="line">  template: '<span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"increment"</span>&gt;</span>&#123;&#123; counter &#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span>',</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      counter: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    increment: function () &#123;</span><br><span class="line">      this.counter += 1</span><br><span class="line">      this.$emit('increment')</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span></span><br></pre></td></tr></table></figure>
+<h3 id="全局事件总线-global-event-bus"><a href="#全局事件总线-global-event-bus" class="headerlink" title="全局事件总线(global event bus)"></a>全局事件总线(global event bus)</h3><p>在父组件中利用vue实例的<code>$on</code>注册一个事件，在子组件中使用vue实例的<code>$emit</code>来触发父组件中的事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bus = <span class="keyword">new</span> Vue()</span><br><span class="line"></span><br><span class="line"><span class="comment">//父组件中注册一个自定义事件 id-selected</span></span><br><span class="line">bus.$on(<span class="string">'id-selected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//在子组件中触发事件id-selected并传递数据id</span></span><br><span class="line">bus.$emit(<span class="string">'id-selected'</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>避免使用 <code>vm.$parent / vm.$root / vm.$children</code></strong></p>
+<h3 id="状态管理器-Vuex"><a href="#状态管理器-Vuex" class="headerlink" title="状态管理器 Vuex"></a>状态管理器 Vuex</h3><p>一个专门为 Vue.js 应用设计的 状态管理模型 + 库<br>为应用内的所有组件提供集中式存储服务，其中的规则确保状态只能按预期方式</p>
+<p>在 vue 应用中，vuex 就充当了数据提供者的角色，vue 则只需要关注页面的展示与交互。</p>
+<p><img width="400" src="https://vuefe.cn/vuex/images/flow.png"><br>state (状态)，驱动我们应用的真实的源；<br>view (视图)，对应着 状态 的声明式映射；<br>actions (动作)，用户在 视图 上的输入引起状态的更改的可能方式。</p>
+<h4 id="Vuex-核心概念"><a href="#Vuex-核心概念" class="headerlink" title="Vuex 核心概念"></a>Vuex 核心概念</h4><p>应用场景<br>页面状态数据：路由、加载状态、异步数据、开关、分页页码、表单数据</p>
+<p><img src="https://vuefe.cn/vuex/images/vuex.png" alt=""></p>
+<h5 id="state-（-store-的-data）"><a href="#state-（-store-的-data）" class="headerlink" title="state （ store 的 data）"></a>state （ store 的 data）</h5><p>存放整个应用状态，作为应用的唯一数据源驱动UI视图的更新<br>尽量初始化详细的state数据</p>
+<p>组件中直接访问<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  count () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.count</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用工具函数 <code>mapSate</code> 访问<br>用于将独立的state数据映射到组件的 <code>computed</code> 属性中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  computed: mapState(&#123;</span><br><span class="line">    <span class="comment">// 箭头函数可以让代码非常简洁</span></span><br><span class="line">    count: state =&gt; state.count,</span><br><span class="line">    <span class="comment">// 传入字符串 'count' 等同于 `state =&gt; state.count`</span></span><br><span class="line">    countAlias: <span class="string">'count'</span>,</span><br><span class="line">    <span class="comment">// 想访问局部状态，就必须借助于一个普通函数，函数中使用 `this` 获取局部状态</span></span><br><span class="line">    countPlusLocalState (state) &#123;</span><br><span class="line">      <span class="keyword">return</span> state.count + <span class="keyword">this</span>.localCount</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="actions-（-store-的-methods）"><a href="#actions-（-store-的-methods）" class="headerlink" title="actions （ store 的 methods）"></a>actions （ store 的 methods）</h5><p>不改变状态，只提交(commit) mutation。<br>可以包含任意异步操作。</p>
+<p>组件中直接访问<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mounted()&#123;</span><br><span class="line">	<span class="keyword">this</span>.$store.dispatch(<span class="string">'getUserData'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>工具函数 <code>mapActions</code> 访问<br>用于将action方法映射到组件的 <code>methods</code> 中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapActions([</span><br><span class="line">      <span class="string">'increment'</span> <span class="comment">// 映射 this.increment() 到 this.$store.dispatch('increment')</span></span><br><span class="line">    ]),</span><br><span class="line">    ...mapActions(&#123;</span><br><span class="line">      add: <span class="string">'increment'</span> <span class="comment">// map this.add() to this.$store.dispatch('increment')</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="mutations-（-store-的-methods）"><a href="#mutations-（-store-的-methods）" class="headerlink" title="mutations （ store 的 methods）"></a>mutations （ store 的 methods）</h5><p>定义了 <strong>同步</strong> 改变 <code>state</code> 的唯一方法<br>在store中，实际改变 状态(state) 的唯一方式是通过 提交(commit) 一个 mutation</p>
+<p>组件中使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">	add()&#123;</span><br><span class="line">		<span class="keyword">this</span>.$store.commit(<span class="string">'ADD_NUMBER'</span>,&#123;num: <span class="number">1</span>&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用工具函数 <code>mapMutations</code><br>将mutation映射到组件的 methods 中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapMutations &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapMutations(&#123;</span><br><span class="line">      add: <span class="string">'increment'</span> <span class="comment">// 映射 this.add() 到 this.$store.commit('increment')</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="getters-（-store-的-computed）"><a href="#getters-（-store-的-computed）" class="headerlink" title="getters  （ store 的 computed）"></a>getters  （ store 的 computed）</h5><p>和计算属性功能相同，基于多个状态生成新的状态</p>
+<p>组件中使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  doneTodosCount () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.doneTodosCount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>工具函数 <code>mapGetters</code><br>用于将getter属性映射到组件的computed中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 使用对象扩展操作符把 getter 混入到 computed 中</span></span><br><span class="line">    ...mapGetters([</span><br><span class="line">      <span class="string">'doneTodosCount'</span>,</span><br><span class="line">      <span class="string">'anotherGetter'</span>,</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    ])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组件仍然可以具有局部状态</p>
+<p>使用 Vuex 并不意味你应该把 所有 状态都放在 Vuex 中去管理。尽管把更多的状态放到 Vuex 管理，会让状态变化变得更加清晰和可调试，但有时也能使代码变得冗余和不直观。如果某部分状态严格属于一个单独的组件，那就只把这部分状态作为局部状态就好了。</p>
+<p>理解：状态分为 <strong>应用级状态</strong> 和 <strong>组件级状态</strong><br>原子类组件，尽量由父组件传递状态数据使用<br>当组件状态不影响父组件和其它同级组件时，可做为组件内部状态<br>页面级的数据应该做为应用级状态管理</p>
+<p>Redux 的作者有一句话说的不错(redux与vuex都是在flux模式上的改进)：<br>原文：Flux libraries are like glasses: you’ll know when you need them.<br>译文：Flux 库就像眼镜：当你需要它们的时候你会懂的。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://www.qiakr.com/qkfe/2016/11/02/vuex-base/" data-id="civ0mfuwl000m9acawt4qvby5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2016/11/02/vuex-base/" data-title="Vuex基础入门" data-url="http://www.qiakr.com/qkfe/2016/11/02/vuex-base/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我们 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/git-lt/qkfe/tree/master" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/qkfe/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/qkfe/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/qkfe/2016/11/02/ES6-base/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">ES6常用特性</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/11/02/vuex-base/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400)" alt="Vuex基础入门" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/11/02/vuex-base/" class="title">Vuex基础入门</a></p>
+                            <p class="item-date"><time datetime="2016-11-02T07:46:24.000Z" itemprop="datePublished">2016-11-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/11/02/ES6-base/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/1-131209160307.jpg?imageView2/1/w/720/h/400)" alt="ES6常用特性" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/11/02/ES6-base/" class="title">ES6常用特性</a></p>
+                            <p class="item-date"><time datetime="2016-11-02T07:44:21.000Z" itemprop="datePublished">2016-11-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/adaf2edda3cc7cd93681bf913901213fb90e91ce.jpg?imageView2/1/w/720/h/400)" alt="基于 koa + gulp 的前端工程构建工具" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="title">基于 koa + gulp 的前端工程构建工具</a></p>
+                            <p class="item-date"><time datetime="2016-09-01T02:57:50.000Z" itemprop="datePublished">2016-09-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/08/21/css-center/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400)" alt="CSS实现垂直水平居中" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/08/21/css-center/" class="title">CSS实现垂直水平居中</a></p>
+                            <p class="item-date"><time datetime="2016-08-21T03:20:51.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/21/tool-css/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400)" alt="CSS工具类使用说明" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/21/tool-css/" class="title">CSS工具类使用说明</a></p>
+                            <p class="item-date"><time datetime="2016-07-21T12:09:58.000Z" itemprop="datePublished">2016-07-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/qkfe/tags/js/">js</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/qkfe/tags/js/" style="font-size: 10px;">js</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.qiakr.com/">洽客官网</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/qkfe/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 LT</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'togglelt'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+    
+        <script src="/qkfe/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/qkfe/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/qkfe/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/qkfe/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>ES6常用特性 | 洽客前端</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="js" />
+    
+    <meta name="description" content="这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6常用特性">
+<meta property="og:url" content="http://www.qiakr.com/2016/11/02/ES6-base/index.html">
+<meta property="og:site_name" content="洽客前端">
+<meta property="og:description" content="这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6。">
+<meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/1-131209160307.jpg?imageView2/1/w/720/h/400">
+<meta property="og:updated_time" content="2016-11-02T07:45:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6常用特性">
+<meta name="twitter:description" content="这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6。">
+<meta name="twitter:image" content="http://7xi480.com1.z0.glb.clouddn.com/1-131209160307.jpg?imageView2/1/w/720/h/400">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/qkfe/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/qkfe/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/qkfe/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/qkfe/css/style.css">
+
+    <script src="/qkfe/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/qkfe/vendor/fancybox/jquery.fancybox.css">
+    
+    
+        <link rel="stylesheet" href="/qkfe/vendor/scrollLoading/style.css">
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2b4e0202baeda5f901b13a86cf9d65cf";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/qkfe/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">洽客技术团队 （QKED）</p>
+                            <p class="description">Talk is cheap, Show me the code.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/qkfe/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/qkfe/categories/web开发/">web开发</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/qkfe/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/qkfe/',
+        CONTENT_URL: '/qkfe/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/qkfe/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/qkfe/categories/web开发/">web开发</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-ES6-base" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        ES6常用特性
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/qkfe/2016/11/02/ES6-base/" class="article-date">
+    <time datetime="2016-11-02T07:44:21.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+            
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qkfe/tags/js/">js</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://7xi480.com1.z0.glb.clouddn.com/1-131209160307.jpg?imageView2/1/w/720/h/400" alt=""><br>这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6。</p>
+<a id="more"></a>
+<h3 id="常用特性"><a href="#常用特性" class="headerlink" title="常用特性"></a>常用特性</h3><ul>
+<li>作用域控制 let、const</li>
+<li>模板字符串</li>
+<li>语法糖 - 箭头函数</li>
+<li>解构</li>
+<li>类与模块</li>
+<li>Promise</li>
+</ul>
+<h3 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let &amp; const"></a>let &amp; const</h3><ul>
+<li><code>const</code> 不可重新赋值的值 (常量、配置项以及引用的组件)</li>
+<li><code>let</code> 使用let声明的变量只在语句块内有效</li>
+</ul>
+<p><code>let</code> 的使用场景相对较少的，我们只会在 loop(for，while 循环)及少量必须重定义的变量上用到他</p>
+<p><strong>let 的使用场景</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数体内的变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> n = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> n = <span class="number">10</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(n); <span class="comment">// 5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// for循环的初始量</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; buttons.length; i++) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>const</code> 由于不可以重新赋值的特性，所以可以做更多语法静态分析方面的优化，从而有更高的执行效率。</p>
+<p><strong>const 的使用场景</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义常量</span></span><br><span class="line"><span class="keyword">const</span> REG_GET_INPUT = <span class="regexp">/^\d&#123;1,3&#125;$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义配置项</span></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  isDev : <span class="literal">false</span>,</span><br><span class="line">  pubDir: <span class="string">'./admin/'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入 gulp</span></span><br><span class="line"><span class="keyword">const</span> gulp    = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="模板字符串-Template-Strings"><a href="#模板字符串-Template-Strings" class="headerlink" title="模板字符串 Template Strings"></a>模板字符串 Template Strings</h3><p>增强版的字符串，用反引号（`）标识，支持变量注入与多行文本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 注入变量与方法</span></span><br><span class="line"><span class="keyword">const</span> start = <span class="string">'hi all'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getName = () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'jelly'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> conf = &#123;</span><br><span class="line">  fav: <span class="string">'Coding'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> msg = <span class="string">`<span class="subst">$&#123;start&#125;</span>, my name is <span class="subst">$&#123;getName()&#125;</span>, <span class="subst">$&#123;conf.fav&#125;</span> is my favourite`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 与引号混用</span></span><br><span class="line"><span class="keyword">const</span> wantToSay = <span class="string">`I'm a "tbfed"`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 支持多行文本</span></span><br><span class="line"><span class="keyword">const</span> slogan = </span><br><span class="line"><span class="string">`</span><br><span class="line">I have a dream today!</span><br><span class="line">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 比较适合写HTML</span></span><br><span class="line"><span class="keyword">const</span> resultTpl = </span><br><span class="line"><span class="string">`</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;div&gt;...&lt;/div&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">`</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="箭头函数-Arrow-Function"><a href="#箭头函数-Arrow-Function" class="headerlink" title="箭头函数 Arrow Function"></a>箭头函数 Arrow Function</h3><p>使用箭头(=&gt;)进行定义的函数，属于匿名函数（Lambda）一类</p>
+<p>箭头函数没有独立执行上下文（ this ），所以其内部引用 this 对象会直接访问父级。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 完整写法</span></span><br><span class="line"><span class="keyword">const</span> getOptions = (name, key) =&gt; &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 省略参数括号</span></span><br><span class="line"><span class="keyword">const</span> getOptions = key =&gt; &#123;</span><br><span class="line">  ... </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 省略参数和方法体括号</span></span><br><span class="line"><span class="keyword">const</span> getOptions = key =&gt; <span class="built_in">console</span>.log(key);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 无参数或方法体，括号不能省略</span></span><br><span class="line"><span class="keyword">const</span> noop = () =&gt; &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 应用示例</span></span><br><span class="line"><span class="keyword">let</span> names = [ <span class="string">'Will'</span>, <span class="string">'Jack'</span>, <span class="string">'Peter'</span>, <span class="string">'Steve'</span>, <span class="string">'John'</span>, <span class="string">'Hugo'</span>, <span class="string">'Mike'</span> ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newSet = names</span><br><span class="line">  .map((name, index) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      id: index,</span><br><span class="line">      name: name</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .filter(man =&gt; man.id % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">  .map(man =&gt; [man.name])</span><br><span class="line">  .reduce((a, b) =&gt; a.concat(b))</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newSet) <span class="comment">//=&gt; [ 'Will', 'Peter', 'John', 'Mike' ]</span></span><br></pre></td></tr></table></figure>
+<h3 id="解构-Destructuring"><a href="#解构-Destructuring" class="headerlink" title="解构 Destructuring"></a>解构 Destructuring</h3><p>用于分解方法的参数、数组、对象中的变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bookSet = [<span class="string">'UED'</span>, <span class="string">'TB fed'</span>, <span class="string">'Not find'</span>];</span><br><span class="line"><span class="keyword">const</span> bookCollection = () =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;book1: <span class="string">'UED'</span>, book2: <span class="string">'TB fed'</span>&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 解构也可以设置默认值</span></span><br><span class="line"><span class="keyword">const</span> &#123;book1, book3 = <span class="string">'Not find'</span>&#125; = bookCollection();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 解构数组时候是可以跳过其中某几项的</span></span><br><span class="line"><span class="keyword">const</span> [book1,,book3] = bookSet;  <span class="comment">// book1 = 'UED', book3 = 'Not find'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 解构可以取到指定对象的任何属性，包括它包含的方法</span></span><br><span class="line"><span class="keyword">const</span> &#123;length: setLength&#125; = bookSet;  <span class="comment">// setLength = 3</span></span><br></pre></td></tr></table></figure>
+<h4 id="Rest运算符（解构赋值）-Spread扩展运算符（…）"><a href="#Rest运算符（解构赋值）-Spread扩展运算符（…）" class="headerlink" title="Rest运算符（解构赋值）/  Spread扩展运算符（…）"></a>Rest运算符（解构赋值）/  Spread扩展运算符（…）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. rest 得到的是一个真正的数组而不是一个伪数组</span></span><br><span class="line"><span class="keyword">const</span> getOptions = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(args.join); <span class="comment">// function</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. rest 可以配合箭头函数使用，达到取得所有参数的目的</span></span><br><span class="line"><span class="keyword">const</span> getOptions = (...args) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(args); <span class="comment">// array</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. spread 可以用于解构时，聚合所得的值</span></span><br><span class="line"><span class="keyword">const</span> [opt1, ...opts] = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. spread 可以用于数组定义</span></span><br><span class="line"><span class="keyword">const</span> opts = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</span><br><span class="line"><span class="keyword">const</span> config = [<span class="string">'other'</span>, ...opts];</span><br></pre></td></tr></table></figure>
+<h3 id="类与模块-Class-amp-Modules"><a href="#类与模块-Class-amp-Modules" class="headerlink" title="类与模块 Class &amp; Modules"></a>类与模块 Class &amp; Modules</h3><p> <strong><code>class</code> 定义一个类</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="comment">//构造函数</span></span><br><span class="line">  <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">	<span class="comment">//实例属性</span></span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//get和set用于对实例属性自定义存取行为</span></span><br><span class="line">  get prop() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'getter'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  set prop(value) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'setter: '</span>+value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//实例方法</span></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//静态方法</span></span><br><span class="line">  <span class="keyword">static</span> classMethod() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//静态属性</span></span><br><span class="line">  <span class="keyword">static</span> get HuaChen()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'jelly'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用 <code>extend</code> 关键字实现类的继承</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, &#123; member [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, * <span class="keyword">as</span> alias <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"module-name"</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>import</code> 模块引入的方式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, &#123; member [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, * <span class="keyword">as</span> alias <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"module-name"</span></span><br></pre></td></tr></table></figure>
+<p><strong><code>export</code> 模块导出或对外提供接口的方式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 有defautl 与 无default</span></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line"><span class="keyword">import</span> crc32 <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">crc32</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 输入</span></span><br><span class="line"><span class="keyword">import</span> &#123;crc32&#125; <span class="keyword">from</span> <span class="string">'crc32'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置别名</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;add <span class="keyword">as</span> <span class="keyword">default</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong><code>export default</code>命令其实只是输出一个叫做 <code>default</code> 的变量，所以它后面不能跟变量声明语句。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> a;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">var</span> a = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>Promise 为异步编程提供统一的解决方案，比传统的回调和事件更加合理有效。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 1. 多个异步任务同时执行用 Promise.all，顺序执行使用链式调用</span></span><br><span class="line"><span class="comment">// Promise.all</span></span><br><span class="line"><span class="built_in">Promise</span></span><br><span class="line">  .all([jsBuildPromise, cssBuildPromise])</span><br><span class="line">  .then(() =&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Promise 的链式调用需要每一个过程返回一个 Promise 对象才能保证顺序执行</span></span><br><span class="line">gitPromise</span><br><span class="line">  .then(() =&gt; git.add())  <span class="comment">// 正确，箭头函数简写</span></span><br><span class="line">  .then(() =&gt; &#123;</span><br><span class="line">    git.commit(); <span class="comment">// 错误，函数返回 undefined，会立即执行下一过程</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .then(() =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> git.log(); <span class="comment">// 正确</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. Promise 需要调用 catch 方法来捕获错误，而且过程内的错误不会阻塞后续代码执行</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(() =&gt; &#123;</span><br><span class="line">  f;  <span class="comment">// not define error !</span></span><br><span class="line">&#125;)</span><br><span class="line">.catch((err) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)  <span class="comment">// show 'f is not define'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'error test'</span>);  <span class="comment">// 此行可以被正常执行</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://www.qiakr.com/qkfe/2016/11/02/ES6-base/" data-id="civ0mfuvn00079acaronw706b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2016/11/02/ES6-base/" data-title="ES6常用特性" data-url="http://www.qiakr.com/qkfe/2016/11/02/ES6-base/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我们 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/git-lt/qkfe/tree/master" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/qkfe/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/qkfe/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/qkfe/2016/11/02/vuex-base/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Vuex基础入门
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/qkfe/2016/09/01/velocity-koa-gulp/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">基于 koa + gulp 的前端工程构建工具</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/11/02/vuex-base/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400)" alt="Vuex基础入门" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/11/02/vuex-base/" class="title">Vuex基础入门</a></p>
+                            <p class="item-date"><time datetime="2016-11-02T07:46:24.000Z" itemprop="datePublished">2016-11-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/11/02/ES6-base/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/1-131209160307.jpg?imageView2/1/w/720/h/400)" alt="ES6常用特性" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/11/02/ES6-base/" class="title">ES6常用特性</a></p>
+                            <p class="item-date"><time datetime="2016-11-02T07:44:21.000Z" itemprop="datePublished">2016-11-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/adaf2edda3cc7cd93681bf913901213fb90e91ce.jpg?imageView2/1/w/720/h/400)" alt="基于 koa + gulp 的前端工程构建工具" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="title">基于 koa + gulp 的前端工程构建工具</a></p>
+                            <p class="item-date"><time datetime="2016-09-01T02:57:50.000Z" itemprop="datePublished">2016-09-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/08/21/css-center/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/0ff41bd5ad6eddc4016b042d3bdbb6fd53663353.jpg?imageView2/1/w/720/h/400)" alt="CSS实现垂直水平居中" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/08/21/css-center/" class="title">CSS实现垂直水平居中</a></p>
+                            <p class="item-date"><time datetime="2016-08-21T03:20:51.000Z" itemprop="datePublished">2016-08-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/07/21/tool-css/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400)" alt="CSS工具类使用说明" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/07/21/tool-css/" class="title">CSS工具类使用说明</a></p>
+                            <p class="item-date"><time datetime="2016-07-21T12:09:58.000Z" itemprop="datePublished">2016-07-21</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/qkfe/tags/js/">js</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/qkfe/tags/js/" style="font-size: 10px;">js</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.qiakr.com/">洽客官网</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/qkfe/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 LT</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'togglelt'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+    
+        <script src="/qkfe/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/qkfe/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/qkfe/vendor/scrollLoading/main.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/qkfe/js/main.js"></script>
+
+    </div>
+</body>
+</html>

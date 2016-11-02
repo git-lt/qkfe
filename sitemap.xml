@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.qiakr.com/qkfe/2016/11/02/vuex-base/</loc>
+    
+    <lastmod>2016-11-02T07:48:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.qiakr.com/qkfe/2016/11/02/ES6-base/</loc>
+    
+    <lastmod>2016-11-02T07:45:57.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.qiakr.com/qkfe/2016/09/01/velocity-koa-gulp/</loc>
+    
+    <lastmod>2016-09-01T03:40:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.qiakr.com/qkfe/2016/08/21/css-center/</loc>
     
     <lastmod>2016-09-01T03:35:53.000Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>http://www.qiakr.com/qkfe/2016/07/17/AMD-Module-guide/</loc>
     
     <lastmod>2016-09-01T03:26:57.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.qiakr.com/qkfe/2016/09/01/velocity-koa-gulp/</loc>
-    
-    <lastmod>2016-09-01T03:26:46.000Z</lastmod>
     
   </url>
   
