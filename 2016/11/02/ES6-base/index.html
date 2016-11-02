@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="洽客前端">
 <meta property="og:description" content="这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6。">
 <meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/1-131209160307.jpg?imageView2/1/w/720/h/400">
-<meta property="og:updated_time" content="2016-11-02T07:45:57.000Z">
+<meta property="og:updated_time" content="2016-11-02T16:17:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6常用特性">
 <meta name="twitter:description" content="这里列出在项目中常用的ES6相关特性，以便更快的理解和应用ES6。">
@@ -195,7 +195,7 @@ var _hmt = _hmt || [];
 <h4 id="Rest运算符（解构赋值）-Spread扩展运算符（…）"><a href="#Rest运算符（解构赋值）-Spread扩展运算符（…）" class="headerlink" title="Rest运算符（解构赋值）/  Spread扩展运算符（…）"></a>Rest运算符（解构赋值）/  Spread扩展运算符（…）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. rest 得到的是一个真正的数组而不是一个伪数组</span></span><br><span class="line"><span class="keyword">const</span> getOptions = <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(args.join); <span class="comment">// function</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. rest 可以配合箭头函数使用，达到取得所有参数的目的</span></span><br><span class="line"><span class="keyword">const</span> getOptions = (...args) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(args); <span class="comment">// array</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. spread 可以用于解构时，聚合所得的值</span></span><br><span class="line"><span class="keyword">const</span> [opt1, ...opts] = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. spread 可以用于数组定义</span></span><br><span class="line"><span class="keyword">const</span> opts = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>];</span><br><span class="line"><span class="keyword">const</span> config = [<span class="string">'other'</span>, ...opts];</span><br></pre></td></tr></table></figure>
 <h3 id="类与模块-Class-amp-Modules"><a href="#类与模块-Class-amp-Modules" class="headerlink" title="类与模块 Class &amp; Modules"></a>类与模块 Class &amp; Modules</h3><p> <strong><code>class</code> 定义一个类</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="comment">//构造函数</span></span><br><span class="line">  <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">	<span class="comment">//实例属性</span></span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//get和set用于对实例属性自定义存取行为</span></span><br><span class="line">  get prop() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'getter'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  set prop(value) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'setter: '</span>+value);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//实例方法</span></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'('</span> + <span class="keyword">this</span>.x + <span class="string">', '</span> + <span class="keyword">this</span>.y + <span class="string">')'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//静态方法</span></span><br><span class="line">  <span class="keyword">static</span> classMethod() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//静态属性</span></span><br><span class="line">  <span class="keyword">static</span> get HuaChen()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'jelly'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>使用 <code>extend</code> 关键字实现类的继承</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, &#123; member [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, * <span class="keyword">as</span> alias <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"module-name"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(x, y); <span class="comment">// 调用父类的constructor(x, y), super必须调用</span></span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString(); <span class="comment">// 调用父类的toString()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong><code>import</code> 模块引入的方式</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> name <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member <span class="keyword">as</span> alias &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> &#123; member1 , member2 <span class="keyword">as</span> alias2 , [...] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, &#123; member [ , [...] ] &#125; <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember, * <span class="keyword">as</span> alias <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> defaultMember <span class="keyword">from</span> <span class="string">"module-name"</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">"module-name"</span></span><br></pre></td></tr></table></figure>
 <p><strong><code>export</code> 模块导出或对外提供接口的方式</strong></p>
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://www.qiakr.com/qkfe/2016/11/02/ES6-base/" data-id="civ0mfuvn00079acaronw706b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.qiakr.com/qkfe/2016/11/02/ES6-base/" data-id="civ14ox180004gscagqvrv0h1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -390,6 +390,25 @@ var _hmt = _hmt || [];
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/qkfe/2016/11/03/vue-multi-page/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/623_4.jpg?imageView2/1/w/720/h/400)" alt="VueJS多页项目应用" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/11/03/vue-multi-page/" class="title">VueJS多页项目应用</a></p>
+                            <p class="item-date"><time datetime="2016-11-02T16:06:38.000Z" itemprop="datePublished">2016-11-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/qkfe/2016/11/02/vuex-base/" class="thumbnail">
     
     
@@ -463,25 +482,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/qkfe/2016/07/21/tool-css/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/blog-31674132_16.jpg?imageView2/1/w/720/h/400)" alt="CSS工具类使用说明" class="thumbnail-image"></span>
-    
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
-                            <p class="item-title"><a href="/qkfe/2016/07/21/tool-css/" class="title">CSS工具类使用说明</a></p>
-                            <p class="item-date"><time datetime="2016-07-21T12:09:58.000Z" itemprop="datePublished">2016-07-21</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -491,7 +491,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">12</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -501,7 +501,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/11/">十一月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/11/">十一月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -511,7 +511,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/qkfe/tags/js/">js</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/qkfe/tags/js/">js</a><span class="tag-list-count">4</span></li></ul>
         </div>
     </div>
 
