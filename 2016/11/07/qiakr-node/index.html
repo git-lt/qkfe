@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="洽客前端">
 <meta property="og:description" content="基于Node + Express的前后端分离项目说明">
 <meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/53955a3ac8b93.jpg">
-<meta property="og:updated_time" content="2016-11-07T02:35:28.000Z">
+<meta property="og:updated_time" content="2016-11-07T03:37:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洽客官网Node项目说明">
 <meta name="twitter:description" content="基于Node + Express的前后端分离项目说明">
@@ -171,7 +171,7 @@ var _hmt = _hmt || [];
 <p><code>pages</code> 目录下按项目目录划分，一个项目一个目录，每个项目可以使用不同的技术框架，由express调用相关的渲染引擎渲染。</p>
 <h2 id="static-静态资源目录"><a href="#static-静态资源目录" class="headerlink" title="static 静态资源目录"></a>static 静态资源目录</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8810.44.09.jpg" width="500"></p>
 <p>按项目资源存放，模块化的项目按页面模块与页面模板目录存放</p>
-<h2 id="数据流转"><a href="#数据流转" class="headerlink" title="数据流转"></a>数据流转</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8811.25.27.png" alt=""></p>
+<h2 id="数据流转"><a href="#数据流转" class="headerlink" title="数据流转"></a>数据流转</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-07%20%E4%B8%8A%E5%8D%8811.33.26.png" alt=""></p>
 <p><code>service</code> 层调用 <code>node-zookeeper-dubbo-qk</code> 模块去连接 <code>zookeeper</code> 获取服务器地址，然后通过 <code>socket</code> 连接服务器获取dubbo服务，通过<code>dubbo</code> 服务调用api获取数据，返回给api层，api层对数据进预处理，然后返回给客户端。</p>
 <h2 id="后台渲染引擎"><a href="#后台渲染引擎" class="headerlink" title="后台渲染引擎"></a>后台渲染引擎</h2><p>官网是多页面应用，为了尽可能的提取公用的片段，制作母版页而采用了jade模板，后台管理页面是一个spa应用，采用了artTemplate模板渲染，以便更快的编写模板，免去jade模板的学习成本。</p>
 <p>项目中可以使用两种模板：</p>
@@ -196,7 +196,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://www.qiakr.com/qkfe/2016/11/07/qiakr-node/" data-id="civ7gliqq000nilcasyygsqsq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.qiakr.com/qkfe/2016/11/07/qiakr-node/" data-id="civ7muxk7000iymca9c0ksyp1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -343,6 +343,16 @@ var _hmt = _hmt || [];
         
 <nav id="article-nav">
     
+        <a href="/qkfe/2016/11/07/power-dialog-readme/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            多功能选择对话框使用说明
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/qkfe/2016/11/03/vue-multi-page/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -361,6 +371,25 @@ var _hmt = _hmt || [];
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/qkfe/2016/11/07/power-dialog-readme/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/T1796WE497J8.jpg)" alt="多功能选择对话框使用说明" class="thumbnail-image"></span>
+    
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
+                            <p class="item-title"><a href="/qkfe/2016/11/07/power-dialog-readme/" class="title">多功能选择对话框使用说明</a></p>
+                            <p class="item-date"><time datetime="2016-11-07T05:32:19.000Z" itemprop="datePublished">2016-11-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -438,25 +467,6 @@ var _hmt = _hmt || [];
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/adaf2edda3cc7cd93681bf913901213fb90e91ce.jpg?imageView2/1/w/720/h/400)" alt="基于 koa + gulp 的前端工程构建工具" class="thumbnail-image"></span>
-    
-    
-</a>
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a></p>
-                            <p class="item-title"><a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="title">基于 koa + gulp 的前端工程构建工具</a></p>
-                            <p class="item-date"><time datetime="2016-09-01T02:57:50.000Z" itemprop="datePublished">2016-09-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -466,7 +476,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">14</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/qkfe/categories/web开发/">web开发</a><span class="category-list-count">15</span></li></ul>
         </div>
     </div>
 
@@ -476,7 +486,7 @@ var _hmt = _hmt || [];
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/11/">十一月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/11/">十一月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/08/">八月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/07/">七月 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/qkfe/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
