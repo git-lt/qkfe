@@ -3,18 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2016/9 | 洽客前端</title>
+    <title>洽客官网Node项目说明 | 洽客前端</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Talk is cheap, Show me the code.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="洽客前端">
-<meta property="og:url" content="http://www.qiakr.com/archives/2016/09/index.html">
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="基于Node + Express的前后端分离项目说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洽客官网Node项目说明">
+<meta property="og:url" content="http://www.qiakr.com/2016/11/07/qiakr-node/index.html">
 <meta property="og:site_name" content="洽客前端">
-<meta property="og:description" content="Talk is cheap, Show me the code.">
+<meta property="og:description" content="基于Node + Express的前后端分离项目说明">
+<meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/53955a3ac8b93.jpg">
+<meta property="og:updated_time" content="2016-11-07T02:35:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="洽客前端">
-<meta name="twitter:description" content="Talk is cheap, Show me the code.">
+<meta name="twitter:title" content="洽客官网Node项目说明">
+<meta name="twitter:description" content="基于Node + Express的前后端分离项目说明">
+<meta name="twitter:image" content="http://7xi480.com1.z0.glb.clouddn.com/53955a3ac8b93.jpg">
     
 
     
@@ -136,73 +141,169 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>归档: 2016/9
+    <a class="page-title-link" href="/qkfe/categories/web开发/">web开发</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-qiakr-node" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/qkfe/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/qkfe/2016/09/01/velocity-koa-gulp/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://7xi480.com1.z0.glb.clouddn.com/adaf2edda3cc7cd93681bf913901213fb90e91ce.jpg?imageView2/1/w/720/h/400)" alt="基于 koa + gulp 的前端工程构建工具" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="ds-thread-count" data-thread-key="2016/09/01/velocity-koa-gulp/">0</span>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/qkfe/categories/web开发/">web开发</a>
-            </p>
-            <p class="date"><time datetime="2016-09-01T02:57:50.000Z" itemprop="datePublished">2016-09-01</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/qkfe/2016/09/01/velocity-koa-gulp/">基于 koa + gulp 的前端工程构建工具</a>
+        洽客官网Node项目说明
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/qkfe/2016/11/07/qiakr-node/" class="article-date">
+    <time datetime="2016-11-07T02:34:16.000Z" itemprop="datePublished">2016-11-07</time>
+</a>
             
-该工具用于移动端和微商城相关H5页面，用于搭建简易的前端web服务，mock服务，优化velocity页面中嵌入的css与js，并提供实时编辑预览功能。
-        </p>
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="http://7xi480.com1.z0.glb.clouddn.com/53955a3ac8b93.jpg" alt=""><br>基于Node + Express的前后端分离项目说明<br><a id="more"></a></p>
+<h2 id="目录设计"><a href="#目录设计" class="headerlink" title="目录设计"></a>目录设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── app.js                      - 服务启动主文件</span><br><span class="line">├── config.dev.js               - 开发环境配置</span><br><span class="line">├── config.js                   - 环境配置</span><br><span class="line">├── config.pro.js               - 生成环境配置</span><br><span class="line">├── db                          - MongoDB数据库文件</span><br><span class="line">├── log4js.config.js            - 日志配置</span><br><span class="line">├── logs                        - 日志记录</span><br><span class="line">├── package.json</span><br><span class="line">├── server                      - 服务端相关</span><br><span class="line">│   ├── api                     - 数据接口层</span><br><span class="line">│   ├── common                  - 公用工具</span><br><span class="line">│   ├── controllers             - 控制器</span><br><span class="line">│   ├── middlerware             - 数据请求中间件</span><br><span class="line">│   ├── mock                    - 接口数据模拟层</span><br><span class="line">│   ├── models                  - MongoDB数据模型层</span><br><span class="line">│   ├── service                 - 数据服务层</span><br><span class="line">│   ├── views                   - 视图层</span><br><span class="line">│   │   ├── includes</span><br><span class="line">│   │   ├── layout</span><br><span class="line">│   │   └── pages</span><br><span class="line">│   ├── api.router.js           - 数据接口路由</span><br><span class="line">│   └── web.router.js           - 页面请求路由</span><br><span class="line">├── static                      - 静态资源相关</span><br><span class="line">│   ├── home</span><br><span class="line">│   ├── home_admin</span><br><span class="line">│   ├── home_mobile</span><br><span class="line">│   ├── libs</span><br><span class="line">│       └── qk.config.js</span><br><span class="line">└── test                        - 测试相关</span><br></pre></td></tr></table></figure>
+<h2 id="Views目录说明"><a href="#Views目录说明" class="headerlink" title="Views目录说明"></a>Views目录说明</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8810.43.18.jpg" width="500"></p>
+<p><code>pages</code> 目录下按项目目录划分，一个项目一个目录，每个项目可以使用不同的技术框架，由express调用相关的渲染引擎渲染。</p>
+<h2 id="static-静态资源目录"><a href="#static-静态资源目录" class="headerlink" title="static 静态资源目录"></a>static 静态资源目录</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8810.44.09.jpg" width="500"></p>
+<p>按项目资源存放，模块化的项目按页面模块与页面模板目录存放</p>
+<h2 id="数据流转"><a href="#数据流转" class="headerlink" title="数据流转"></a>数据流转</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8811.25.27.png" alt=""></p>
+<p><code>service</code> 层调用 <code>node-zookeeper-dubbo-qk</code> 模块去连接 <code>zookeeper</code> 获取服务器地址，然后通过 <code>socket</code> 连接服务器获取dubbo服务，通过<code>dubbo</code> 服务调用api获取数据，返回给api层，api层对数据进预处理，然后返回给客户端。</p>
+<h2 id="后台渲染引擎"><a href="#后台渲染引擎" class="headerlink" title="后台渲染引擎"></a>后台渲染引擎</h2><p>官网是多页面应用，为了尽可能的提取公用的片段，制作母版页而采用了jade模板，后台管理页面是一个spa应用，采用了artTemplate模板渲染，以便更快的编写模板，免去jade模板的学习成本。</p>
+<p>项目中可以使用两种模板：</p>
+<ul>
+<li>以<code>.jade</code> 为后缀文件会自动调用 <code>jade</code> 去渲染</li>
+<li>以<code>.html</code>为后缀的文件会自动调用 <code>artTemplate</code> 去渲染</li>
+</ul>
+<h2 id="新增一个服务"><a href="#新增一个服务" class="headerlink" title="新增一个服务"></a>新增一个服务</h2><ol>
+<li>去 <code>service</code> 层注册一个服务，指定接口与调用参数，与java的 <code>dubbo</code>服务一一对应</li>
+<li>去 <code>api</code> 层添加数据接口</li>
+<li>如果<code>views</code>层有需要该服务提供相关数据时，去 <code>controller</code> 层引入 <code>service</code>层获取数据去渲染页面。</li>
+<li>去<code>api.router.js</code> 注册接口路由，对外提供接口服务</li>
+<li>编写页面相关逻辑，去 <code>web.router.js</code> 注册页面路由</li>
+</ol>
+<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><p><code>api</code> 层 :           a<em> + 业务名称<br><code>controller</code> 层:  c</em> + 业务名称<br><code>service</code> 层:      s_ + 业务名称</p>
+<h2 id="配置环境拆分"><a href="#配置环境拆分" class="headerlink" title="配置环境拆分"></a>配置环境拆分</h2><p>不同的环境 端口，数据库，各种服务都有不同的配置，也有相同的配置，分为不同的文件来管理</p>
+<p><code>config.js</code> 不同环境下的公共配置<br><code>config.dev.js</code> 开发环境下的配置<br><code>config.pro.js</code> 生产环境下的配置</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://www.qiakr.com/qkfe/2016/11/07/qiakr-node/" data-id="civ7gliqq000nilcasyygsqsq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div class="ds-thread" data-thread-key="2016/11/07/qiakr-node/" data-title="洽客官网Node项目说明" data-url="http://www.qiakr.com/qkfe/2016/11/07/qiakr-node/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -238,6 +339,19 @@ var _hmt = _hmt || [];
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/qkfe/2016/11/03/vue-multi-page/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">VueJS多页项目应用</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
