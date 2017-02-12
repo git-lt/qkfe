@@ -362,7 +362,7 @@
     <link href="http://www.qiakr.com/2016/11/02/vuex-base/"/>
     <id>http://www.qiakr.com/2016/11/02/vuex-base/</id>
     <published>2016-11-02T07:46:24.000Z</published>
-    <updated>2017-02-12T14:46:01.000Z</updated>
+    <updated>2017-02-12T14:46:37.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400&quot; alt=&quot;&quot;&gt;&lt;br&gt;多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。&lt;br&gt;理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;通信原则-Props-Down-Events-Up&quot;&gt;&lt;a href=&quot;#通信原则-Props-Down-Events-Up&quot; class=&quot;headerlink&quot; title=&quot;通信原则 Props Down  Events Up&quot;&gt;&lt;/a&gt;通信原则 Props Down  Events Up&lt;/h3&gt;&lt;p&gt;父组件向子组件传递数据使用 props&lt;br&gt;子组件向父组件传递数据使用 event&lt;/p&gt;
@@ -376,7 +376,8 @@
 &lt;p&gt;&lt;strong&gt;避免使用 &lt;code&gt;vm.$parent / vm.$root / vm.$children&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&quot;状态管理器-Vuex&quot;&gt;&lt;a href=&quot;#状态管理器-Vuex&quot; class=&quot;headerlink&quot; title=&quot;状态管理器 Vuex&quot;&gt;&lt;/a&gt;状态管理器 Vuex&lt;/h3&gt;&lt;p&gt;一个专门为 Vue.js 应用设计的 状态管理模型 + 库&lt;br&gt;为应用内的所有组件提供集中式存储服务，其中的规则确保状态只能按预期方式&lt;/p&gt;
 &lt;p&gt;在 vue 应用中，vuex 就充当了数据提供者的角色，vue 则只需要关注页面的展示与交互。&lt;/p&gt;
-&lt;p&gt;&lt;img width=&quot;400&quot; src=&quot;https://vuex.vuejs.org/zh-cn/images/flow.png&quot;&gt;&lt;br&gt;state (状态)，驱动我们应用的真实的源；&lt;br&gt;view (视图)，对应着 状态 的声明式映射；&lt;br&gt;actions (动作)，用户在 视图 上的输入引起状态的更改的可能方式。&lt;/p&gt;
+&lt;p&gt;&lt;img width=&quot;400&quot; src=&quot;https://vuex.vuejs.org/zh-cn/images/flow.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;state (状态)，驱动我们应用的真实的源；&lt;br&gt;view (视图)，对应着 状态 的声明式映射；&lt;br&gt;actions (动作)，用户在 视图 上的输入引起状态的更改的可能方式。&lt;/p&gt;
 &lt;h4 id=&quot;Vuex-核心概念&quot;&gt;&lt;a href=&quot;#Vuex-核心概念&quot; class=&quot;headerlink&quot; title=&quot;Vuex 核心概念&quot;&gt;&lt;/a&gt;Vuex 核心概念&lt;/h4&gt;&lt;p&gt;应用场景&lt;br&gt;页面状态数据：路由、加载状态、异步数据、开关、分页页码、表单数据&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://vuex.vuejs.org/zh-cn/images/vuex.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h5 id=&quot;state-（-store-的-data）&quot;&gt;&lt;a href=&quot;#state-（-store-的-data）&quot; class=&quot;headerlink&quot; title=&quot;state （ store 的 data）&quot;&gt;&lt;/a&gt;state （ store 的 data）&lt;/h5&gt;&lt;p&gt;存放整个应用状态，作为应用的唯一数据源驱动UI视图的更新&lt;br&gt;尽量初始化详细的state数据&lt;/p&gt;

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="洽客前端">
 <meta property="og:description" content="多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。">
 <meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/6W8NZET5PS6V.jpg?imageView2/1/w/720/h/400">
-<meta property="og:updated_time" content="2017-02-12T14:46:01.000Z">
+<meta property="og:updated_time" content="2017-02-12T14:46:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vuex基础入门">
 <meta name="twitter:description" content="多组件共用相同的状态时，在深层嵌套组件间传递属性过于冗长，并且不能简单地在同级别的组件间传递，直接引用 父/子 实例，又或是通过事件来修改和同步多份状态副本。这样的模型是脆弱的，代码很快会变得不可维护。理解Vue组件之间的数据传递关系到应用的健壮性和可维护性。">
@@ -179,7 +179,8 @@ var _hmt = _hmt || [];
 <p><strong>避免使用 <code>vm.$parent / vm.$root / vm.$children</code></strong></p>
 <h3 id="状态管理器-Vuex"><a href="#状态管理器-Vuex" class="headerlink" title="状态管理器 Vuex"></a>状态管理器 Vuex</h3><p>一个专门为 Vue.js 应用设计的 状态管理模型 + 库<br>为应用内的所有组件提供集中式存储服务，其中的规则确保状态只能按预期方式</p>
 <p>在 vue 应用中，vuex 就充当了数据提供者的角色，vue 则只需要关注页面的展示与交互。</p>
-<p><img width="400" src="https://vuex.vuejs.org/zh-cn/images/flow.png"><br>state (状态)，驱动我们应用的真实的源；<br>view (视图)，对应着 状态 的声明式映射；<br>actions (动作)，用户在 视图 上的输入引起状态的更改的可能方式。</p>
+<p><img width="400" src="https://vuex.vuejs.org/zh-cn/images/flow.png"></p>
+<p>state (状态)，驱动我们应用的真实的源；<br>view (视图)，对应着 状态 的声明式映射；<br>actions (动作)，用户在 视图 上的输入引起状态的更改的可能方式。</p>
 <h4 id="Vuex-核心概念"><a href="#Vuex-核心概念" class="headerlink" title="Vuex 核心概念"></a>Vuex 核心概念</h4><p>应用场景<br>页面状态数据：路由、加载状态、异步数据、开关、分页页码、表单数据</p>
 <p><img src="https://vuex.vuejs.org/zh-cn/images/vuex.png" alt=""></p>
 <h5 id="state-（-store-的-data）"><a href="#state-（-store-的-data）" class="headerlink" title="state （ store 的 data）"></a>state （ store 的 data）</h5><p>存放整个应用状态，作为应用的唯一数据源驱动UI视图的更新<br>尽量初始化详细的state数据</p>
