@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://www.qiakr.com/2016/11/07/qiakr-node/index.html">
 <meta property="og:site_name" content="洽客前端">
 <meta property="og:description" content="基于Node + Express的前后端分离项目说明">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://7xi480.com1.z0.glb.clouddn.com/53955a3ac8b93.jpg">
 <meta property="og:updated_time" content="2016-11-07T03:37:51.000Z">
 <meta name="twitter:card" content="summary">
@@ -159,14 +160,20 @@ var _hmt = _hmt || [];
             </header>
         
         <div class="article-subtitle">
-            <a href="/qkfe/2016/11/07/qiakr-node/" class="article-date">
-    <time datetime="2016-11-07T02:34:16.000Z" itemprop="datePublished">2016-11-07</time>
-</a>
+            <p  class="article-byline">
+  <span>作者：LT&emsp;</span>
+  <span>发表于:
+    <a href="/qkfe/2016/11/07/qiakr-node/" class="article-date">
+      <time datetime="2016-11-07T02:34:16.000Z" itemprop="datePublished">2016-11-07</time>
+    </a>
+  </span>
+</p>
+
             
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><img src="http://7xi480.com1.z0.glb.clouddn.com/53955a3ac8b93.jpg" alt=""><br>基于Node + Express的前后端分离项目说明<br><a id="more"></a></p>
-<h2 id="目录设计"><a href="#目录设计" class="headerlink" title="目录设计"></a>目录设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── app.js                      - 服务启动主文件</span><br><span class="line">├── config.dev.js               - 开发环境配置</span><br><span class="line">├── config.js                   - 环境配置</span><br><span class="line">├── config.pro.js               - 生成环境配置</span><br><span class="line">├── db                          - MongoDB数据库文件</span><br><span class="line">├── log4js.config.js            - 日志配置</span><br><span class="line">├── logs                        - 日志记录</span><br><span class="line">├── package.json</span><br><span class="line">├── server                      - 服务端相关</span><br><span class="line">│   ├── api                     - 数据接口层</span><br><span class="line">│   ├── common                  - 公用工具</span><br><span class="line">│   ├── controllers             - 控制器</span><br><span class="line">│   ├── middlerware             - 数据请求中间件</span><br><span class="line">│   ├── mock                    - 接口数据模拟层</span><br><span class="line">│   ├── models                  - MongoDB数据模型层</span><br><span class="line">│   ├── service                 - 数据服务层</span><br><span class="line">│   ├── views                   - 视图层</span><br><span class="line">│   │   ├── includes</span><br><span class="line">│   │   ├── layout</span><br><span class="line">│   │   └── pages</span><br><span class="line">│   ├── api.router.js           - 数据接口路由</span><br><span class="line">│   └── web.router.js           - 页面请求路由</span><br><span class="line">├── static                      - 静态资源相关</span><br><span class="line">│   ├── home</span><br><span class="line">│   ├── home_admin</span><br><span class="line">│   ├── home_mobile</span><br><span class="line">│   ├── libs</span><br><span class="line">│       └── qk.config.js</span><br><span class="line">└── test                        - 测试相关</span><br></pre></td></tr></table></figure>
+<h2 id="目录设计"><a href="#目录设计" class="headerlink" title="目录设计"></a>目录设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── app.js                      - 服务启动主文件</div><div class="line">├── config.dev.js               - 开发环境配置</div><div class="line">├── config.js                   - 环境配置</div><div class="line">├── config.pro.js               - 生成环境配置</div><div class="line">├── db                          - MongoDB数据库文件</div><div class="line">├── log4js.config.js            - 日志配置</div><div class="line">├── logs                        - 日志记录</div><div class="line">├── package.json</div><div class="line">├── server                      - 服务端相关</div><div class="line">│   ├── api                     - 数据接口层</div><div class="line">│   ├── common                  - 公用工具</div><div class="line">│   ├── controllers             - 控制器</div><div class="line">│   ├── middlerware             - 数据请求中间件</div><div class="line">│   ├── mock                    - 接口数据模拟层</div><div class="line">│   ├── models                  - MongoDB数据模型层</div><div class="line">│   ├── service                 - 数据服务层</div><div class="line">│   ├── views                   - 视图层</div><div class="line">│   │   ├── includes</div><div class="line">│   │   ├── layout</div><div class="line">│   │   └── pages</div><div class="line">│   ├── api.router.js           - 数据接口路由</div><div class="line">│   └── web.router.js           - 页面请求路由</div><div class="line">├── static                      - 静态资源相关</div><div class="line">│   ├── home</div><div class="line">│   ├── home_admin</div><div class="line">│   ├── home_mobile</div><div class="line">│   ├── libs</div><div class="line">│       └── qk.config.js</div><div class="line">└── test                        - 测试相关</div></pre></td></tr></table></figure>
 <h2 id="Views目录说明"><a href="#Views目录说明" class="headerlink" title="Views目录说明"></a>Views目录说明</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8810.43.18.jpg" width="500"></p>
 <p><code>pages</code> 目录下按项目目录划分，一个项目一个目录，每个项目可以使用不同的技术框架，由express调用相关的渲染引擎渲染。</p>
 <h2 id="static-静态资源目录"><a href="#static-静态资源目录" class="headerlink" title="static 静态资源目录"></a>static 静态资源目录</h2><p><img src="http://7xi480.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-11-03%20%E4%B8%8A%E5%8D%8810.44.09.jpg" width="500"></p>
@@ -196,7 +203,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://www.qiakr.com/qkfe/2016/11/07/qiakr-node/" data-id="civ91s0fk000gowca9z7enybe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.qiakr.com/2016/11/07/qiakr-node/" data-id="cj5d9yi9r000cssca6ajhsz6v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -263,7 +270,7 @@ var _hmt = _hmt || [];
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/11/07/qiakr-node/" data-title="洽客官网Node项目说明" data-url="http://www.qiakr.com/qkfe/2016/11/07/qiakr-node/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/07/qiakr-node/" data-title="洽客官网Node项目说明" data-url="http://www.qiakr.com/2016/11/07/qiakr-node/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
